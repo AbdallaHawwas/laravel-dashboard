@@ -1,0 +1,35 @@
+@font-face {
+    display: swap;
+    font-style: normal;
+    font-family: "Noto Sans Arabic";
+    font-weight: 100 900;
+    src: url("../fonts/NotoSansArabic.ttf") format("truetype");
+}
+
+@font-face {
+    display: swap;
+    font-style: normal;
+    font-family: "Inter";
+    font-weight: 100 900;
+    src: url("../fonts/Inter.ttf") format("truetype");
+}
+
+body {
+    --tblr-font-serif: "Inter", "Noto Sans Arabic", serif;
+    --tblr-font-sans-serif: "Inter", "Noto Sans Arabic", sans-serif;
+    --tblr-body-font-family: var(--tblr-font-sans-serif);
+
+    font-feature-settings: "cv03", "cv04", "cv11";
+    overflow-y: auto;
+}
+
+/* Fix tinymce background */
+.tox .tox-edit-area__iframe {
+    background-color: unset !important;
+}
+
+/* Allow pagination to wrap */
+ul.pagination {
+    gap: 5px;
+    flex-wrap: wrap;
+}
