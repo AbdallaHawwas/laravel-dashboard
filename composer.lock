@@ -3218,12 +3218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/livewire-datatable.git",
-                "reference": "adf68adaadd55ef00aecc8cede083313aee45dcc"
+                "reference": "3764e33162548b7dfd8bb314e58e54e1ce114cd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/adf68adaadd55ef00aecc8cede083313aee45dcc",
-                "reference": "adf68adaadd55ef00aecc8cede083313aee45dcc",
+                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/3764e33162548b7dfd8bb314e58e54e1ce114cd3",
+                "reference": "3764e33162548b7dfd8bb314e58e54e1ce114cd3",
                 "shasum": ""
             },
             "require": {
@@ -3262,7 +3262,7 @@
                 "issues": "https://github.com/redot-src/livewire-datatable/issues",
                 "source": "https://github.com/redot-src/livewire-datatable/tree/0.0.1"
             },
-            "time": "2023-05-18T10:22:46+00:00"
+            "time": "2023-05-18T23:13:08+00:00"
         },
         {
             "name": "spatie/image-optimizer",
