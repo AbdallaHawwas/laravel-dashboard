@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
 
     @livewireStyles
+    @toastifyCss
 
     @stack('styles')
 </head>
@@ -56,9 +57,9 @@
     <script src="{{ asset('/assets/js/app.js') }}"></script>
 
     @livewireScripts
+    @toastifyJs
 
     @stack('scripts')
-    @include('toastify::toastify')
 </body>
 
 </html>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53e6feafbbbcd55a1480dc2438d33c36",
+    "content-hash": "66940822df20c092c5b969095b6f07d3",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -3160,16 +3160,16 @@
         },
         {
             "name": "redot/laravel-toastify",
-            "version": "0.0.2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/laravel-toastify.git",
-                "reference": "e9545f904d467cedeb9142fae5287e082a40534b"
+                "reference": "28d6d6bc90396b1f1623b4a3aeafeb95ca6f1b72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/laravel-toastify/zipball/e9545f904d467cedeb9142fae5287e082a40534b",
-                "reference": "e9545f904d467cedeb9142fae5287e082a40534b",
+                "url": "https://api.github.com/repos/redot-src/laravel-toastify/zipball/28d6d6bc90396b1f1623b4a3aeafeb95ca6f1b72",
+                "reference": "28d6d6bc90396b1f1623b4a3aeafeb95ca6f1b72",
                 "shasum": ""
             },
             "require": {
@@ -3208,22 +3208,22 @@
             "description": "A simple package to use toastify.js in laravel applications",
             "support": {
                 "issues": "https://github.com/redot-src/laravel-toastify/issues",
-                "source": "https://github.com/redot-src/laravel-toastify/tree/0.0.2"
+                "source": "https://github.com/redot-src/laravel-toastify/tree/v1.0.0"
             },
-            "time": "2023-05-19T16:19:29+00:00"
+            "time": "2023-05-19T18:07:47+00:00"
         },
         {
             "name": "redot/livewire-datatable",
-            "version": "0.0.1",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/livewire-datatable.git",
-                "reference": "3764e33162548b7dfd8bb314e58e54e1ce114cd3"
+                "reference": "987fc4bb6f855db6bbe1c364dcdc5f4a4d7789d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/3764e33162548b7dfd8bb314e58e54e1ce114cd3",
-                "reference": "3764e33162548b7dfd8bb314e58e54e1ce114cd3",
+                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/987fc4bb6f855db6bbe1c364dcdc5f4a4d7789d8",
+                "reference": "987fc4bb6f855db6bbe1c364dcdc5f4a4d7789d8",
                 "shasum": ""
             },
             "require": {
@@ -3260,9 +3260,9 @@
             "description": "A Laravel package to easily handle server-side datatables in Livewire",
             "support": {
                 "issues": "https://github.com/redot-src/livewire-datatable/issues",
-                "source": "https://github.com/redot-src/livewire-datatable/tree/0.0.1"
+                "source": "https://github.com/redot-src/livewire-datatable/tree/v1.0.0"
             },
-            "time": "2023-05-18T23:13:08+00:00"
+            "time": "2023-05-19T17:46:14+00:00"
         },
         {
             "name": "spatie/image-optimizer",
