@@ -33,4 +33,12 @@ class Admin extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     * Scope a query to only include admins that are not the current admin.
+     */
+    public function scopeWhereNotCurrentAdmin($query): void
+    {
+        $query->where('id', '!=', auth()->id());
+    }
 }

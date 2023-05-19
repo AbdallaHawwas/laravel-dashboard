@@ -20,7 +20,7 @@ class RoleTable extends DataTable
      */
     public function query(): Builder
     {
-        return Role::where('name', '!=', 'Super Admin');
+        return Role::query();
     }
 
     /**

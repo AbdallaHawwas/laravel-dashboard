@@ -23,7 +23,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // Allow super admins to do everything
-        Gate::before(fn ($user) => $user->hasRole('Super Admin') ? true : null);
+        // Allow super admin to do everything
+        Gate::before(fn ($user) => $user->id === 1 ? true : null);
     }
 }

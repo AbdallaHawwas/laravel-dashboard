@@ -13,7 +13,7 @@ class ImpersonateController extends Controller
      */
     public function create()
     {
-        $admins = Admin::where('id', '!=', Auth::id())->get()->pluck('name', 'id');
+        $admins = Admin::whereNotCurrentAdmin()->get()->pluck('name', 'id');
 
         return view('impersonate.create', [
             'admins' => $admins,

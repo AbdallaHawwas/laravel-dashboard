@@ -12,12 +12,10 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        $super = Admin::factory()->create([
+        Admin::factory()->create([
             'name' => 'Administrator',
             'email' => 'admin@email.com',
             'password' => bcrypt('password'),
         ]);
-
-        $super->assignRole('Super Admin');
     }
 }
