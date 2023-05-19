@@ -79,7 +79,7 @@ class LocalizeCommand extends Command
         $replacements = ['\"' => '"', '\\\'' => '\''];
         $translations = $translations->map(fn ($translation) => trim(strtr($translation, $replacements)));
 
-        return $translations->filter()->unique()->sort()->values()->toArray();
+        return $translations->filter()->unique()->values()->toArray();
     }
 
     /**
@@ -97,6 +97,8 @@ class LocalizeCommand extends Command
 
             File::delete($path);
         }
+
+        ksort($translations);
 
         $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES;
         File::put($path, json_encode($translations, $flags));
