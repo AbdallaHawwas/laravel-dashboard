@@ -6,7 +6,16 @@
         <form class="card-body" method="POST">
             @csrf
 
-            <h2 class="h2 text-center mb-4">{{ __('Login to your account') }}</h2>
+            <div class="text-center mb-4">
+                <h2 class="h2 mb-2">
+                    {{ __('Login to your account') }}
+                </h2>
+
+                <p class="text-muted">
+                    {{ __('Forgot your password?') }}
+                    <a href="{{ route('password.request') }}">{{ __('Reset password') }}</a>
+                </p>
+            </div>
 
             <div class="mb-3">
                 <x-components::forms.input type="email" name="email" :title="__('Email address')" value="{{ old('email') }}"
@@ -14,18 +23,8 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="password">
-                    {{ __('Password') }} <span class="text-danger">*</span>
-                    <span class="form-label-description">
-                        <a href="{{ route('password.request') }}" class="text-decoration-none">
-                            {{ __('Forgot password') }}
-                        </a>
-                    </span>
-                </label>
-
-                <input type="password" class="form-control" name="password" id="password"
-                    placeholder="{{ __('Password') }}" required />
-                <x-components::forms.invalid-feedback field="password" />
+                <x-components::forms.input type="password" name="password" :title="__('Password')" placeholder="Password"
+                    required />
             </div>
 
             <div class="mb-2">

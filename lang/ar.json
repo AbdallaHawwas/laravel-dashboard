@@ -30,6 +30,7 @@
     "Enter your email address and your reset password link will be emailed to you.": "أدخل عنوان بريدك الإلكتروني وسنقوم بإرسال رابط إعادة تعيين كلمة المرور إليك.",
     "Forbidden": "ممنوع الدخول",
     "Forgot password": "نسيت كلمة المرور",
+    "Forgot your password?": "نسيت كلمة المرور؟",
     "Generate QR Code": "توليد رمز الاستجابة السريعة QR",
     "If you are the application owner check the logs for more information": "إذا كنت صاحب التطبيق، يرجى التحقق من السجلات لمزيد من المعلومات",
     "Impersonate": "التنكر",
