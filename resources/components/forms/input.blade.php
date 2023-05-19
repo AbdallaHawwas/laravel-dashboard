@@ -11,7 +11,7 @@
     </label>
 @endif
 
-<div @class(['input-group' => $isPassword])>
+<div @class(['col', 'input-group' => $isPassword])>
     <input type="{{ $type }}" name="{{ $name }}" id="{{ $name }}" class="form-control"
         {{ $attributes->merge(['required' => $required]) }}>
 
@@ -22,6 +22,6 @@
             </a>
         </span>
     @endif
-</div>
 
-<x-components::forms.invalid-feedback :field="$name" />
+    <x-components::forms.invalid-feedback :field="$name" />
+</div>

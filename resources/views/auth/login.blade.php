@@ -23,7 +23,7 @@
             </div>
 
             <div class="mb-3">
-                <x-components::forms.input type="password" name="password" :title="__('Password')" placeholder="Password"
+                <x-components::forms.input type="password" name="password" :title="__('Password')" :placeholder="__('Password')"
                     required />
             </div>
 
