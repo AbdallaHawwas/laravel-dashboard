@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3bf3933a2040ad0091c50bcfc336ba0",
+    "content-hash": "53e6feafbbbcd55a1480dc2438d33c36",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -2278,16 +2278,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.4",
+            "version": "v4.15.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290"
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/11e2663a5bc9db5d714eedb4277ee300403b4a9e",
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e",
                 "shasum": ""
             },
             "require": {
@@ -2328,9 +2328,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.5"
             },
-            "time": "2023-03-05T19:49:14+00:00"
+            "time": "2023-05-19T20:20:00+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -3160,16 +3160,16 @@
         },
         {
             "name": "redot/laravel-toastify",
-            "version": "0.0.1",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/laravel-toastify.git",
-                "reference": "f4d0210f9e10c43f013ac89ba66ba7cee96f95fa"
+                "reference": "e9545f904d467cedeb9142fae5287e082a40534b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/laravel-toastify/zipball/f4d0210f9e10c43f013ac89ba66ba7cee96f95fa",
-                "reference": "f4d0210f9e10c43f013ac89ba66ba7cee96f95fa",
+                "url": "https://api.github.com/repos/redot-src/laravel-toastify/zipball/e9545f904d467cedeb9142fae5287e082a40534b",
+                "reference": "e9545f904d467cedeb9142fae5287e082a40534b",
                 "shasum": ""
             },
             "require": {
@@ -3208,9 +3208,9 @@
             "description": "A simple package to use toastify.js in laravel applications",
             "support": {
                 "issues": "https://github.com/redot-src/laravel-toastify/issues",
-                "source": "https://github.com/redot-src/laravel-toastify/tree/0.0.1"
+                "source": "https://github.com/redot-src/laravel-toastify/tree/0.0.2"
             },
-            "time": "2023-05-18T07:29:10+00:00"
+            "time": "2023-05-19T16:19:29+00:00"
         },
         {
             "name": "redot/livewire-datatable",
