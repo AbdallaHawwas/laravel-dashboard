@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Notifications\NewAdminNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 
@@ -46,7 +47,7 @@ class AdminController extends Controller
         $admin = Admin::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'password' => bcrypt($password),
+            'password' => Hash::make($password),
         ]);
 
         $admin->assignRole($validated['role']);

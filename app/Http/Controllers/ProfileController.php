@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Traits\CanUploadFile;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -28,7 +29,7 @@ class ProfileController extends Controller
         $user->fill($request->only('name', 'email'));
 
         if ($request->filled('password')) {
-            $user->password = bcrypt($request->get('password'));
+            $user->password = Hash::make($request->get('password'));
         }
 
         if ($request->hasFile('profile_picture')) {
