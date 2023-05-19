@@ -20,7 +20,7 @@ class AdminTable extends Datatable
      */
     public function query(): Builder
     {
-        return Admin::query();
+        return Admin::whereNotCurrentAdmin();
     }
 
     /**
