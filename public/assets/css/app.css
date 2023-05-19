@@ -33,3 +33,8 @@ ul.pagination {
     gap: 5px;
     flex-wrap: wrap;
 }
+
+/* Fix tabler dropdown menu arrow in rtl */
+[dir="rtl"] .dropdown-menu-arrow:before {
+    transform: rotate(45deg);
+}
