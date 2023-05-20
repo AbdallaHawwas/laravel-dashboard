@@ -16,7 +16,7 @@ test('reset password link can be requested', function () {
     $admin = Admin::factory()->create();
 
     $this->post(route('dashboard.password.email'), [
-        'email' => $admin->email
+        'email' => $admin->email,
     ]);
 
     Notification::assertSentTo($admin, ResetPassword::class);
@@ -28,7 +28,7 @@ test('reset password screen can be rendered', function () {
     $admin = Admin::factory()->create();
 
     $this->post(route('dashboard.password.email'), [
-        'email' => $admin->email
+        'email' => $admin->email,
     ]);
 
     Notification::assertSentTo($admin, ResetPassword::class, function ($notification) {
@@ -48,7 +48,7 @@ test('password can be reset with valid token', function () {
     $admin = Admin::factory()->create();
 
     $this->post(route('dashboard.password.email'), [
-        'email' => $admin->email
+        'email' => $admin->email,
     ]);
 
     Notification::assertSentTo($admin, ResetPassword::class, function ($notification) use ($admin) {

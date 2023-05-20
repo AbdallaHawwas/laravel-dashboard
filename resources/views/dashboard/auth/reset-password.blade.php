@@ -7,7 +7,7 @@
             @csrf
 
             <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('dashboard.token') }}">
+            <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <h2 class="card-title text-center mb-4">{{ __('Reset password') }}</h2>
 
