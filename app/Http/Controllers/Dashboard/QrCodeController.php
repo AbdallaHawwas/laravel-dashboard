@@ -9,6 +9,6 @@ class QrCodeController extends Controller
      */
     public function index()
     {
-        return dashboard_view('qr-code.index');
+        return view('dashboard.qr-code.index');
     }
 }

@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return dashboard_view('profile.edit', [
+        return view('dashboard.profile.edit', [
             'user' => auth()->user(),
         ]);
     }

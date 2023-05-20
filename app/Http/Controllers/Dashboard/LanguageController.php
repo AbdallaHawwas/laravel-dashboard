@@ -12,7 +12,7 @@ class LanguageController extends Controller
      */
     public function index()
     {
-        return dashboard_view('language.index', [
+        return view('dashboard.language.index', [
             'languages' => config('app.locales'),
         ]);
     }
@@ -28,7 +28,7 @@ class LanguageController extends Controller
 
         $translations = json_decode(File::get(lang_path($locale . '.json')));
 
-        return dashboard_view('language.edit', [
+        return view('dashboard.language.edit', [
             'locale' => $locale,
             'translations' => $translations,
         ]);

@@ -12,7 +12,7 @@ class MemoController extends Controller
      */
     public function index()
     {
-        return dashboard_view('memos.index');
+        return view('dashboard.memos.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class MemoController extends Controller
      */
     public function create()
     {
-        return dashboard_view('memos.create');
+        return view('dashboard.memos.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class MemoController extends Controller
      */
     public function show(Memo $memo)
     {
-        return dashboard_view('memos.show', [
+        return view('dashboard.memos.show', [
             'memo' => $memo,
         ]);
     }
@@ -53,7 +53,7 @@ class MemoController extends Controller
      */
     public function edit(Memo $memo)
     {
-        return dashboard_view('memos.edit', [
+        return view('dashboard.memos.edit', [
             'memo' => $memo,
         ]);
     }

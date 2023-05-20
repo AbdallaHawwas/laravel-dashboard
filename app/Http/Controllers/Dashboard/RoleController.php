@@ -13,7 +13,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return dashboard_view('roles.index');
+        return view('dashboard.roles.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class RoleController extends Controller
             return explode('.', $item->name)[1];
         });
 
-        return dashboard_view('roles.create', [
+        return view('dashboard.roles.create', [
             'permissions' => $permissions,
         ]);
     }
@@ -58,7 +58,7 @@ class RoleController extends Controller
             return explode('.', $item->name)[1];
         });
 
-        return dashboard_view('roles.edit', [
+        return view('dashboard.roles.edit', [
             'role' => $role,
             'permissions' => $permissions,
         ]);

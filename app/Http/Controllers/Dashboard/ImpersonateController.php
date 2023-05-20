@@ -15,7 +15,7 @@ class ImpersonateController extends Controller
     {
         $admins = Admin::whereNotCurrentAdmin()->get()->pluck('name', 'id');
 
-        return dashboard_view('impersonate.create', [
+        return view('dashboard.impersonate.create', [
             'admins' => $admins,
         ]);
     }

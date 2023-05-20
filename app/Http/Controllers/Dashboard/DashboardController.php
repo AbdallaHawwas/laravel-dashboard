@@ -11,6 +11,6 @@ class DashboardController extends Controller
      */
     public function __invoke()
     {
-        return dashboard_view('index');
+        return view('dashboard.index');
     }
 }

@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return dashboard_view('admins.index');
+        return view('dashboard.admins.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminController extends Controller
     {
         $roles = Role::pluck('name', 'id');
 
-        return dashboard_view('admins.create', [
+        return view('dashboard.admins.create', [
             'roles' => $roles,
         ]);
     }
@@ -63,7 +63,7 @@ class AdminController extends Controller
     {
         $roles = Role::pluck('name', 'id');
 
-        return dashboard_view('admins.edit', [
+        return view('dashboard.admins.edit', [
             'admin' => $admin,
             'roles' => $roles,
         ]);
