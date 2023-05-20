@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Admin;
 use App\Notifications\NewAdminNotification;
@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admins.index');
+        return dashboard_view('admins.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminController extends Controller
     {
         $roles = Role::pluck('name', 'id');
 
-        return view('admins.create', [
+        return dashboard_view('admins.create', [
             'roles' => $roles,
         ]);
     }
@@ -63,7 +63,7 @@ class AdminController extends Controller
     {
         $roles = Role::pluck('name', 'id');
 
-        return view('admins.edit', [
+        return dashboard_view('admins.edit', [
             'admin' => $admin,
             'roles' => $roles,
         ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 class DashboardController extends Controller
 {
@@ -11,6 +11,6 @@ class DashboardController extends Controller
      */
     public function __invoke()
     {
-        return view('dashboard');
+        return dashboard_view('index');
     }
 }

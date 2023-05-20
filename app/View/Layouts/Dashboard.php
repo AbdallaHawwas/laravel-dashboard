@@ -55,7 +55,7 @@ class Dashboard extends Component
     {
         $item = (object) $item;
 
-        if (isset($item->route) && !$this->hasPermissionTo($item->route)) {
+        if (isset($item->route) && ! $this->hasPermissionTo($item->route)) {
             return false;
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 class QrCodeController extends Controller
 {
@@ -9,6 +9,6 @@ class QrCodeController extends Controller
      */
     public function index()
     {
-        return view('qr-code.index');
+        return dashboard_view('qr-code.index');
     }
 }

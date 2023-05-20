@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -12,7 +12,7 @@ class LanguageController extends Controller
      */
     public function index()
     {
-        return view('language.index', [
+        return dashboard_view('language.index', [
             'languages' => config('app.locales'),
         ]);
     }
@@ -28,7 +28,7 @@ class LanguageController extends Controller
 
         $translations = json_decode(File::get(lang_path($locale . '.json')));
 
-        return view('language.edit', [
+        return dashboard_view('language.edit', [
             'locale' => $locale,
             'translations' => $translations,
         ]);

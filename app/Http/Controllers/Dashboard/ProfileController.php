@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\Dashboard\ProfileUpdateRequest;
 use App\Traits\CanUploadFile;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,7 +15,7 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit', [
+        return dashboard_view('profile.edit', [
             'user' => auth()->user(),
         ]);
     }

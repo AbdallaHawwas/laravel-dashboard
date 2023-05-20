@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
@@ -13,7 +13,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('roles.index');
+        return dashboard_view('roles.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class RoleController extends Controller
             return explode('.', $item->name)[0];
         });
 
-        return view('roles.create', [
+        return dashboard_view('roles.create', [
             'permissions' => $permissions,
         ]);
     }
@@ -58,7 +58,7 @@ class RoleController extends Controller
             return explode('.', $item->name)[0];
         });
 
-        return view('roles.edit', [
+        return dashboard_view('roles.edit', [
             'role' => $role,
             'permissions' => $permissions,
         ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class ImpersonateController extends Controller
     {
         $admins = Admin::whereNotCurrentAdmin()->get()->pluck('name', 'id');
 
-        return view('impersonate.create', [
+        return dashboard_view('impersonate.create', [
             'admins' => $admins,
         ]);
     }

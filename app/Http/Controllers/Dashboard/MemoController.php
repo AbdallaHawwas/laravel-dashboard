@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Memo;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class MemoController extends Controller
      */
     public function index()
     {
-        return view('memos.index');
+        return dashboard_view('memos.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class MemoController extends Controller
      */
     public function create()
     {
-        return view('memos.create');
+        return dashboard_view('memos.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class MemoController extends Controller
      */
     public function show(Memo $memo)
     {
-        return view('memos.show', [
+        return dashboard_view('memos.show', [
             'memo' => $memo,
         ]);
     }
@@ -53,7 +53,7 @@ class MemoController extends Controller
      */
     public function edit(Memo $memo)
     {
-        return view('memos.edit', [
+        return dashboard_view('memos.edit', [
             'memo' => $memo,
         ]);
     }

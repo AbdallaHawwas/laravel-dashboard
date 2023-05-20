@@ -5,7 +5,7 @@ use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Notification;
 
 test('reset password link screen can be rendered', function () {
-    $response = $this->get('/forgot-password');
+    $response = $this->get(route('password.request'));
 
     $response->assertStatus(200);
 });
@@ -15,7 +15,9 @@ test('reset password link can be requested', function () {
 
     $admin = Admin::factory()->create();
 
-    $this->post('/forgot-password', ['email' => $admin->email]);
+    $this->post(route('password.email'), [
+        'email' => $admin->email
+    ]);
 
     Notification::assertSentTo($admin, ResetPassword::class);
 });
@@ -25,10 +27,14 @@ test('reset password screen can be rendered', function () {
 
     $admin = Admin::factory()->create();
 
-    $this->post('/forgot-password', ['email' => $admin->email]);
+    $this->post(route('password.email'), [
+        'email' => $admin->email
+    ]);
 
     Notification::assertSentTo($admin, ResetPassword::class, function ($notification) {
-        $response = $this->get('/reset-password/' . $notification->token);
+        $response = $this->get(route('password.reset', [
+            'token' => $notification->token,
+        ]));
 
         $response->assertStatus(200);
 
@@ -41,10 +47,12 @@ test('password can be reset with valid token', function () {
 
     $admin = Admin::factory()->create();
 
-    $this->post('/forgot-password', ['email' => $admin->email]);
+    $this->post(route('password.email'), [
+        'email' => $admin->email
+    ]);
 
     Notification::assertSentTo($admin, ResetPassword::class, function ($notification) use ($admin) {
-        $response = $this->post('/reset-password', [
+        $response = $this->post(route('password.store'), [
             'token' => $notification->token,
             'email' => $admin->email,
             'password' => 'password',
