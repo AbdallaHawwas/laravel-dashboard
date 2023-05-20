@@ -3,7 +3,7 @@
     <x-components::status />
 
     <div class="card card-md">
-        <form class="card-body" method="POST" action="{{ route('password.email') }}">
+        <form class="card-body" method="POST" action="{{ route('dashboard.password.email') }}">
             @csrf
 
             <h2 class="card-title text-center mb-4">{{ __('Forgot password') }}</h2>

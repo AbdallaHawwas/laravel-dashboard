@@ -7,7 +7,7 @@ uses(Illuminate\Foundation\Testing\RefreshDatabase::class);
 test('profile page is displayed', function () {
     $user = Admin::factory()->create();
 
-    $response = $this->actingAs($user)->get(route('profile.edit'));
+    $response = $this->actingAs($user)->get(route('dashboard.profile.edit'));
 
     $response->assertOk();
 });
@@ -15,12 +15,12 @@ test('profile page is displayed', function () {
 test('profile information can be updated', function () {
     $user = Admin::factory()->create();
 
-    $response = $this->actingAs($user)->put(route('profile.update'), [
+    $response = $this->actingAs($user)->put(route('dashboard.profile.update'), [
         'name' => 'Test User',
         'email' => 'test@example.com',
     ]);
 
-    $response->assertSessionHasNoErrors()->assertRedirect(route('profile.edit'));
+    $response->assertSessionHasNoErrors()->assertRedirect(route('dashboard.profile.edit'));
 
     $user->refresh();
 

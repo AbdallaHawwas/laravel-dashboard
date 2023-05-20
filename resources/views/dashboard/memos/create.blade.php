@@ -1,5 +1,5 @@
 <x-layouts::dashboard>
-    <form class="card" action="{{ route('memos.store') }}" method="POST">
+    <form class="card" action="{{ route('dashboard.memos.store') }}" method="POST">
         @csrf
 
         <div class="card-header">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="card-footer text-end">
-            <a href="{{ route('memos.index') }}" class="btn">{{ __('Cancel') }}</a>
+            <a href="{{ route('dashboard.memos.index') }}" class="btn">{{ __('Cancel') }}</a>
             <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
         </div>
     </form>

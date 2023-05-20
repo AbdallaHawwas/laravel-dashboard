@@ -23,7 +23,7 @@ class LanguageController extends Controller
     public function edit(string $locale)
     {
         if (! File::exists(lang_path($locale . '.json'))) {
-            return redirect()->route('language.index')->with('error', __('The language file does not exist!'));
+            return redirect()->route('dashboard.language.index')->with('error', __('The language file does not exist!'));
         }
 
         $translations = json_decode(File::get(lang_path($locale . '.json')));

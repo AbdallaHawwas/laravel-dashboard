@@ -12,15 +12,15 @@ beforeEach(function () {
 });
 
 test('Memos index page can be rendered', function () {
-    $this->get(route('memos.index'))->assertOk();
+    $this->get(route('dashboard.memos.index'))->assertOk();
 });
 
 test('Memos create page can be rendered', function () {
-    $this->get(route('memos.create'))->assertOk();
+    $this->get(route('dashboard.memos.create'))->assertOk();
 });
 
 test('Memos can be created', function () {
-    $this->post(route('memos.store'), [
+    $this->post(route('dashboard.memos.store'), [
         'title' => 'Test Title',
         'content' => 'Test Content',
     ])->assertRedirect();
@@ -34,19 +34,19 @@ test('Memos can be created', function () {
 test('Memos show page can be rendered', function () {
     $memo = Memo::factory()->create();
 
-    $this->get(route('memos.show', $memo))->assertOk();
+    $this->get(route('dashboard.memos.show', $memo))->assertOk();
 });
 
 test('Memos edit page can be rendered', function () {
     $memo = Memo::factory()->create();
 
-    $this->get(route('memos.edit', $memo))->assertOk();
+    $this->get(route('dashboard.memos.edit', $memo))->assertOk();
 });
 
 test('Memos can be updated', function () {
     $memo = Memo::factory()->create();
 
-    $this->put(route('memos.update', $memo), [
+    $this->put(route('dashboard.memos.update', $memo), [
         'title' => 'Test Title',
         'content' => 'Test Content',
     ])->assertRedirect();
@@ -61,7 +61,7 @@ test('Memos can be updated', function () {
 test('Memos can be deleted', function () {
     $memo = Memo::factory()->create();
 
-    $this->delete(route('memos.destroy', $memo))->assertRedirect();
+    $this->delete(route('dashboard.memos.destroy', $memo))->assertRedirect();
 
     $this->assertDatabaseMissing('memos', [
         'id' => $memo->id,

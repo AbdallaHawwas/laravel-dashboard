@@ -22,7 +22,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::all()->groupBy(function ($item, $key) {
-            return explode('.', $item->name)[0];
+            return explode('.', $item->name)[1];
         });
 
         return dashboard_view('roles.create', [
@@ -45,7 +45,7 @@ class RoleController extends Controller
 
         $role->syncPermissions($validated['permissions'] ?? []);
 
-        return redirect()->route('roles.index')
+        return redirect()->route('dashboard.roles.index')
             ->with('success', __('Role created successfully.'));
     }
 
@@ -55,7 +55,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         $permissions = Permission::all()->groupBy(function ($item, $key) {
-            return explode('.', $item->name)[0];
+            return explode('.', $item->name)[1];
         });
 
         return dashboard_view('roles.edit', [
@@ -79,7 +79,7 @@ class RoleController extends Controller
 
         $role->syncPermissions($validated['permissions'] ?? []);
 
-        return redirect()->route('roles.index')
+        return redirect()->route('dashboard.roles.index')
             ->with('success', __('Role updated successfully.'));
     }
 
@@ -89,13 +89,13 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         if ($role->users()->count() > 0) {
-            return redirect()->route('roles.index')
+            return redirect()->route('dashboard.roles.index')
                 ->with('error', __('Role is used by a user.'));
         }
 
         $role->delete();
 
-        return redirect()->route('roles.index')
+        return redirect()->route('dashboard.roles.index')
             ->with('success', __('Role deleted successfully.'));
     }
 }

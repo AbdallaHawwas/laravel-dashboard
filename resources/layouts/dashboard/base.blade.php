@@ -2,7 +2,7 @@
     <div class="page">
         <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark d-print-none" style="overflow: auto">
             <div class="container-fluid">
-                <a class="navbar-brand py-3 py-lg-5 px-2" href="{{ route('dashboard') }}">
+                <a class="navbar-brand py-3 py-lg-5 px-2" href="{{ route('dashboard.index') }}">
                     <x-components::logo class="navbar-brand-img" height="24" />
                 </a>
 
@@ -43,7 +43,7 @@
 
                             <div class="dropdown-menu dropdown-menu-end">
                                 @foreach (config('app.locales') as $locale)
-                                    <a class="dropdown-item" href="{{ route('language.show', $locale) }}">
+                                    <a class="dropdown-item" href="{{ route('dashboard.language.show', $locale) }}">
                                         <span class="nav-link-title">{{ __('languages.' . $locale) }}</span>
                                     </a>
                                 @endforeach
@@ -72,7 +72,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            <a href="{{ route('profile.edit') }}" class="dropdown-item">
+                            <a href="{{ route('dashboard.profile.edit') }}" class="dropdown-item">
                                 {{ __('Profile') }}
                             </a>
                             <a class="dropdown-item cursor-pointer" onclick="$('#logout-form').submit();">
@@ -105,7 +105,7 @@
         </div>
     </div>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+    <form id="logout-form" action="{{ route('dashboard.logout') }}" method="POST" class="d-none">
         @csrf
     </form>
 </x-layouts::scaffold>

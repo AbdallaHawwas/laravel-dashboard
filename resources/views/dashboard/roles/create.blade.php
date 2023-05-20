@@ -1,5 +1,5 @@
 <x-layouts::dashboard>
-    <form class="card" action="{{ route('roles.store') }}" method="POST">
+    <form class="card" action="{{ route('dashboard.roles.store') }}" method="POST">
         @csrf
 
         <div class="card-header">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="card-footer text-end">
-            <a href="{{ route('roles.index') }}" class="btn">{{ __('Cancel') }}</a>
+            <a href="{{ route('dashboard.roles.index') }}" class="btn">{{ __('Cancel') }}</a>
             <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
         </div>
     </form>

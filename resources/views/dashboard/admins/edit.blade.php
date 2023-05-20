@@ -1,5 +1,5 @@
 <x-layouts::dashboard>
-    <form class="card" action="{{ route('admins.update', $admin) }}" method="POST">
+    <form class="card" action="{{ route('dashboard.admins.update', $admin) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -15,7 +15,7 @@
         </div>
 
         <div class="card-footer text-end">
-            <a href="{{ route('admins.index') }}" class="btn">{{ __('Cancel') }}</a>
+            <a href="{{ route('dashboard.admins.index') }}" class="btn">{{ __('Cancel') }}</a>
             <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
         </div>
     </form>

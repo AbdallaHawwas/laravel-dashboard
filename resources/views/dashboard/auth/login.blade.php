@@ -13,7 +13,7 @@
 
                 <p class="text-muted">
                     {{ __('Forgot your password?') }}
-                    <a href="{{ route('password.request') }}">{{ __('Reset password') }}</a>
+                    <a href="{{ route('dashboard.password.request') }}">{{ __('Reset password') }}</a>
                 </p>
             </div>
 

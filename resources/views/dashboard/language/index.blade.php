@@ -20,12 +20,12 @@
                         <td>{{ __('languages.' . $language) }}</td>
                         <td>
                             <div class="btn-list flex-nowrap">
-                                <a href="{{ route('language.sync', $language) }}" class="btn btn-icon"
+                                <a href="{{ route('dashboard.language.sync', $language) }}" class="btn btn-icon"
                                     title="{{ __('Sync') }}" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                     <i class="ti ti-reload"></i>
                                 </a>
 
-                                <a href="{{ route('language.edit', $language) }}" class="btn btn-icon"
+                                <a href="{{ route('dashboard.language.edit', $language) }}" class="btn btn-icon"
                                     title="{{ __('Edit') }}" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                     <i class="ti ti-edit"></i>
                                 </a>

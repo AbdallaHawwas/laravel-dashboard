@@ -1,7 +1,7 @@
 <x-layouts::dashboard>
     <x-components::status />
 
-    <form class="card" action="{{ route('language.update', $locale) }}" method="POST">
+    <form class="card" action="{{ route('dashboard.language.update', $locale) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -39,7 +39,7 @@
         </table>
 
         <div class="card-footer text-end border-top-0">
-            <a href="{{ route('language.index') }}" class="btn">{{ __('Cancel') }}</a>
+            <a href="{{ route('dashboard.language.index') }}" class="btn">{{ __('Cancel') }}</a>
             <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
         </div>
     </form>

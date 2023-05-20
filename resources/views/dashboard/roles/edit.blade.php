@@ -1,5 +1,5 @@
 <x-layouts::dashboard>
-    <form class="card" action="{{ route('roles.update', $role) }}" method="POST">
+    <form class="card" action="{{ route('dashboard.roles.update', $role) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -9,7 +9,7 @@
 
         <div class="card-body border-bottom">
             <div class="d-flex gap-2">
-                <x-components::forms.input name="name" :value="old('name')" :placeholder="__('Name')" required />
+                <x-components::forms.input name="name" :value="$role->name" :placeholder="__('Name')" required />
                 <a class="btn btn-outline-primary" onclick="togglePermissions()">{{ __('Toggle All') }}</a>
             </div>
         </div>
@@ -47,8 +47,18 @@
         </div>
 
         <div class="card-footer text-end">
-            <a href="{{ route('roles.index') }}" class="btn">{{ __('Cancel') }}</a>
+            <a href="{{ route('dashboard.roles.index') }}" class="btn">{{ __('Cancel') }}</a>
             <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
         </div>
     </form>
+
+    @push('scripts')
+        <script>
+            function togglePermissions() {
+                $('input[type="checkbox"]').each(function() {
+                    $(this).prop('checked', !$(this).prop('checked'));
+                });
+            }
+        </script>
+    @endpush
 </x-layouts::dashboard>

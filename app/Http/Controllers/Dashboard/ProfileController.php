@@ -37,11 +37,11 @@ class ProfileController extends Controller
                 $this->deleteFileFromUrl($old);
             }
 
-            $user->profile_picture = $this->uploadFile($request->file('profile_picture'), 'profile_pictures');
+            $user->profile_picture = $this->uploadFile($request->file('profile_picture'), 'dashboard/profile_pictures');
         }
 
         $user->save();
 
-        return redirect()->route('profile.edit')->with('success', __('Profile updated successfully.'));
+        return redirect()->route('dashboard.profile.edit')->with('success', __('Profile updated successfully.'));
     }
 }

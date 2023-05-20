@@ -13,7 +13,7 @@ class AdminTable extends Datatable
     /**
      * Create button.
      */
-    public string|bool $create = 'admins.create';
+    public string|bool $create = 'dashboard.admins.create';
 
     /**
      * Query builder.
@@ -54,8 +54,8 @@ class AdminTable extends Datatable
     public function actions(): array
     {
         return [
-            Action::edit('admins.edit')->can('admins.edit'),
-            Action::delete('admins.destroy')->can('admins.destroy'),
+            Action::edit('dashboard.admins.edit')->can('dashboard.admins.edit'),
+            Action::delete('dashboard.admins.destroy')->can('dashboard.admins.destroy'),
         ];
     }
 }

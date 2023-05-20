@@ -1,5 +1,5 @@
 <x-layouts::dashboard>
-    <form class="card" action="{{ route('impersonate.store') }}" method="POST">
+    <form class="card" action="{{ route('dashboard.impersonate.store') }}" method="POST">
         @csrf
 
         <div class="card-header">

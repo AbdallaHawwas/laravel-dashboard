@@ -4,7 +4,7 @@ use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
 
 test('login screen can be rendered', function () {
-    $response = $this->get(route('login'));
+    $response = $this->get(route('dashboard.login'));
 
     $response->assertStatus(200);
 });
@@ -12,7 +12,7 @@ test('login screen can be rendered', function () {
 test('admin can authenticate using the login screen', function () {
     $admin = Admin::factory()->create();
 
-    $response = $this->post(route('login'), [
+    $response = $this->post(route('dashboard.login'), [
         'email' => $admin->email,
         'password' => 'password',
     ]);
@@ -24,7 +24,7 @@ test('admin can authenticate using the login screen', function () {
 test('users can not authenticate with invalid password', function () {
     $admin = Admin::factory()->create();
 
-    $this->post(route('login'), [
+    $this->post(route('dashboard.login'), [
         'email' => $admin->email,
         'password' => 'wrong-password',
     ]);

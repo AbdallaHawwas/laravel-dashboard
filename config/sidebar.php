@@ -14,7 +14,7 @@ return [
     */
 
     [
-        'route' => 'dashboard',
+        'route' => 'dashboard.index',
         'icon' => 'ti ti-home',
         'locales' => [
             'en' => 'Dashboard',
@@ -31,7 +31,7 @@ return [
 
         'children' => [
             [
-                'route' => 'memos.index',
+                'route' => 'dashboard.memos.index',
                 'locales' => [
                     'en' => 'Memos',
                     'ar' => 'المذكرات',
@@ -39,7 +39,7 @@ return [
             ],
 
             [
-                'route' => 'qr-code.index',
+                'route' => 'dashboard.qr-code.index',
                 'locales' => [
                     'en' => 'QR Code',
                     'ar' => 'رمز الاستجابة السريعة',
@@ -47,7 +47,7 @@ return [
             ],
 
             [
-                'route' => 'impersonate.create',
+                'route' => 'dashboard.impersonate.create',
                 'locales' => [
                     'en' => 'Impersonate',
                     'ar' => 'تسجيل الدخول كمستخدم',
@@ -65,7 +65,7 @@ return [
 
         'children' => [
             [
-                'route' => 'profile.edit',
+                'route' => 'dashboard.profile.edit',
                 'locales' => [
                     'en' => 'Profile',
                     'ar' => 'الملف الشخصي',
@@ -73,7 +73,7 @@ return [
             ],
 
             [
-                'route' => 'roles.index',
+                'route' => 'dashboard.roles.index',
                 'locales' => [
                     'en' => 'Roles',
                     'ar' => 'الصلاحيات',
@@ -81,7 +81,7 @@ return [
             ],
 
             [
-                'route' => 'admins.index',
+                'route' => 'dashboard.admins.index',
                 'locales' => [
                     'en' => 'Admins',
                     'ar' => 'المشرفين',
@@ -89,7 +89,7 @@ return [
             ],
 
             [
-                'route' => 'language.index',
+                'route' => 'dashboard.language.index',
                 'locales' => [
                     'en' => 'Language',
                     'ar' => 'اللغة',

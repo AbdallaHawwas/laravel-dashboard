@@ -3,11 +3,11 @@
     <x-components::status />
 
     <div class="card card-md">
-        <form class="card-body" method="POST" action="{{ route('password.store') }}">
+        <form class="card-body" method="POST" action="{{ route('dashboard.password.store') }}">
             @csrf
 
             <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+            <input type="hidden" name="token" value="{{ $request->route('dashboard.token') }}">
 
             <h2 class="card-title text-center mb-4">{{ __('Reset password') }}</h2>
 

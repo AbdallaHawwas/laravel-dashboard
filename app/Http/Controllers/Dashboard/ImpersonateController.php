@@ -33,6 +33,6 @@ class ImpersonateController extends Controller
 
         toastify()->success(__('Impersonating :name', ['name' => Auth::user()->name]));
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard.index');
     }
 }

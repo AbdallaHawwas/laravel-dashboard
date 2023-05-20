@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('dashboard.auth')->group(function () {
-    Route::get('/', \App\Http\Controllers\Dashboard\DashboardController::class)->name('dashboard');
+    Route::get('/', \App\Http\Controllers\Dashboard\DashboardController::class)->name('index');
 
     Route::get('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'update'])->name('profile.update')->middleware('image.optimize');

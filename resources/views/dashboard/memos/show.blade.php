@@ -9,7 +9,7 @@
         </div>
 
         <div class="card-footer text-end">
-            <a href="{{ route('memos.index') }}" class="btn">{{ __('Back') }}</a>
+            <a href="{{ route('dashboard.memos.index') }}" class="btn">{{ __('Back') }}</a>
         </div>
     </div>
 </x-layouts::dashboard>

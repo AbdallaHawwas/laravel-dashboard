@@ -35,7 +35,7 @@ class MemoController extends Controller
 
         Memo::create($request->all());
 
-        return redirect()->route('memos.index')->with('success', 'Memo has been created successfully!');
+        return redirect()->route('dashboard.memos.index')->with('success', 'Memo has been created successfully!');
     }
 
     /**
@@ -80,6 +80,6 @@ class MemoController extends Controller
     {
         $memo->delete();
 
-        return redirect()->route('memos.index')->with('success', 'Memo has been deleted successfully!');
+        return redirect()->route('dashboard.memos.index')->with('success', 'Memo has been deleted successfully!');
     }
 }

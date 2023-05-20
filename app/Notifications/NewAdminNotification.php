@@ -37,7 +37,7 @@ class NewAdminNotification extends Notification
             ->subject(__('New Admin Account'))
             ->line(__('You have been added as an admin to :app.', ['app' => config('app.name')]))
             ->line(__('Your password is :password.', ['password' => $this->password]))
-            ->action(__('Login'), route('login'))
+            ->action(__('Login'), route('dashboard.login'))
             ->line(__('Thank you for using our application!'));
     }
 

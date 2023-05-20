@@ -53,7 +53,7 @@ class AdminController extends Controller
         $admin->assignRole($validated['role']);
         $admin->notify(new NewAdminNotification($password));
 
-        return redirect()->route('admins.index')->with('success', __('Admin has been created.'));
+        return redirect()->route('dashboard.admins.index')->with('success', __('Admin has been created.'));
     }
 
     /**
@@ -80,7 +80,7 @@ class AdminController extends Controller
 
         $admin->syncRoles($validated['role']);
 
-        return redirect()->route('admins.index')->with('success', __('Admin has been updated.'));
+        return redirect()->route('dashboard.admins.index')->with('success', __('Admin has been updated.'));
     }
 
     /**

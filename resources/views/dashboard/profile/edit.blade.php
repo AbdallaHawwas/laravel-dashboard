@@ -1,7 +1,7 @@
 <x-layouts::dashboard>
     <x-components::status />
 
-    <form class="card" action="{{ route('profile.update', $user) }}" method="POST" enctype="multipart/form-data">
+    <form class="card" action="{{ route('dashboard.profile.update', $user) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
