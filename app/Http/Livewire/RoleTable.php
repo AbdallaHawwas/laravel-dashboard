@@ -11,9 +11,14 @@ use Spatie\Permission\Models\Role;
 class RoleTable extends DataTable
 {
     /**
-     * Create button.
+     * Create a new component instance.
      */
-    public string|bool $create = 'dashboard.roles.create';
+    public function __construct()
+    {
+        if (static::can('dashboard.roles.create')) {
+            $this->create = 'dashboard.roles.create';
+        }
+    }
 
     /**
      * Query builder.

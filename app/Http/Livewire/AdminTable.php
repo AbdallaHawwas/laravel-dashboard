@@ -11,9 +11,14 @@ use Redot\LivewireDatatable\Datatable;
 class AdminTable extends Datatable
 {
     /**
-     * Create button.
+     * Create a new component instance.
      */
-    public string|bool $create = 'dashboard.admins.create';
+    public function __construct()
+    {
+        if (static::can('dashboard.admins.create')) {
+            $this->create = 'dashboard.admins.create';
+        }
+    }
 
     /**
      * Query builder.
