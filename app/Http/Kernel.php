@@ -28,7 +28,7 @@ class Kernel extends HttpKernel
      * @var array<string, array<int, class-string|string>>
      */
     protected $middlewareGroups = [
-        'web' => [
+        'client' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
@@ -37,8 +37,12 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'website' => [
+            'client',
+        ],
+
         'dashboard' => [
-            'web',
+            'client',
             \App\Http\Middleware\Dashboard\Localization::class,
             \App\Http\Middleware\Dashboard\RoutePermission::class,
         ],
