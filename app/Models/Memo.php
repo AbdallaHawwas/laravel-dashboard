@@ -30,9 +30,9 @@ class Memo extends Model
     }
 
     /**
-     * Add admin_id to memo before creating.
+     * Perform any actions required after the model boots.
      */
-    protected static function booted()
+    protected static function booted(): void
     {
         static::creating(function ($memo) {
             $memo->admin_id = auth()->id();

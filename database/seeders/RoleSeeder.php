@@ -24,7 +24,7 @@ class RoleSeeder extends Seeder
 
         foreach ($permissions as $key => $value) {
             foreach ($value as $permission) {
-                Permission::create(['name' => $key . '.' . $permission]);
+                Permission::create(['name' => 'dashboard.' . $key . '.' . $permission]);
             }
         }
     }

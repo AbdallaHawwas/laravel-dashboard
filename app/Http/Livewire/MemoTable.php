@@ -13,7 +13,7 @@ class MemoTable extends DataTable
     /**
      * Create button.
      */
-    public string|bool $create = 'memos.create';
+    public string|bool $create = 'dashboard.memos.create';
 
     /**
      * Query builder.
