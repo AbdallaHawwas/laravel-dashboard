@@ -51,12 +51,12 @@
                         </div>
                     @endif
 
-                    <div class="d-flex">
-                        <a data-theme="dark" class="nav-link px-0 hide-theme-dark cursor-pointer">
+                    <div class="nav-item">
+                        <a href="#" data-theme="dark" class="nav-link px-0 hide-theme-dark">
                             <i class="ti ti-moon"></i>
                         </a>
 
-                        <a data-theme="light" class="nav-link px-0 hide-theme-light cursor-pointer">
+                        <a href="#" data-theme="light" class="nav-link px-0 hide-theme-light">
                             <i class="ti ti-sun"></i>
                         </a>
                     </div>
