@@ -4,7 +4,7 @@
 ])
 
 @php
-    $title = (isset($title) ? $title . ' | ' : '') . __(config('app.name'));
+    $title = (isset($title) ? $title . ' | ' : '') . __(setting('app_name'));
 @endphp
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@
 
     <title>{{ $title }}</title>
 
-    <link rel="icon" href="{{ asset('assets/images/icon.png') }}" type="image/png" />
+    <link rel="icon" href="{{ setting('app_icon') }}" type="image/png" />
 
     {{-- Tabler Core --}}
     <link rel="stylesheet" href="{{ asset("/vendor/tabler/tabler.$direction.min.css") }}">

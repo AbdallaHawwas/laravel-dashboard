@@ -92,7 +92,7 @@
                     <footer class="mt-4 text-muted text-center">
                         <div>
                             {{  __('All rights reserved for') }}
-                            <a href="{{ config('app.url') }}" target="_blank">{{ config('app.name') }}</a>
+                            <a href="{{ config('app.url') }}" target="_blank">{{ setting('app_name') }}</a>
                             &copy; {{ date('Y') }}
                         </div>
                         <div>

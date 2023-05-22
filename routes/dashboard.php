@@ -23,12 +23,12 @@ Route::middleware('dashboard.auth')->group(function () {
     Route::resource('language', \App\Http\Controllers\Dashboard\LanguageController::class)->only(['show'])->withoutMiddleware(['auth']);
     Route::get('language/{locale}/sync', [\App\Http\Controllers\Dashboard\SyncLanguageController::class, 'update'])->name('language.sync');
 
-    Route::resource('qr-code', \App\Http\Controllers\Dashboard\QrCodeController::class)->only(['index']);
     Route::resource('memos', \App\Http\Controllers\Dashboard\MemoController::class);
+    Route::resource('qr-code', \App\Http\Controllers\Dashboard\QrCodeController::class)->only(['index']);
+    Route::resource('impersonate', \App\Http\Controllers\Dashboard\ImpersonateController::class)->only(['create', 'store']);
 
     Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class)->except(['show']);
     Route::resource('admins', \App\Http\Controllers\Dashboard\AdminController::class)->except(['show']);
-    Route::resource('impersonate', \App\Http\Controllers\Dashboard\ImpersonateController::class)->only(['create', 'store']);
 });
 
 /*
