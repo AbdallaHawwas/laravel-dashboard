@@ -29,6 +29,9 @@ Route::middleware('dashboard.auth')->group(function () {
 
     Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class)->except(['show']);
     Route::resource('admins', \App\Http\Controllers\Dashboard\AdminController::class)->except(['show']);
+
+    Route::get('settings', [\App\Http\Controllers\Dashboard\SettingController::class, 'edit'])->name('settings.edit');
+    Route::put('settings', [\App\Http\Controllers\Dashboard\SettingController::class, 'update'])->name('settings.update');
 });
 
 /*

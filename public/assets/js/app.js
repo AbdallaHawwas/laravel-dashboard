@@ -26,4 +26,4 @@ const initTinyMCE = async (selector, options) => {
 const togglePassword = (el, selector) => {
     $(el).find('i').toggleClass('ti-eye ti-eye-closed');
     $(selector).attr('type', (i, attr) => attr === 'password' ? 'text' : 'password');
-}
+};

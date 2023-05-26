@@ -89,6 +89,14 @@ return [
             ],
 
             [
+                'route' => 'dashboard.settings.edit',
+                'locales' => [
+                    'en' => 'Settings',
+                    'ar' => 'الإعدادات',
+                ],
+            ],
+
+            [
                 'route' => 'dashboard.language.index',
                 'locales' => [
                     'en' => 'Language',
