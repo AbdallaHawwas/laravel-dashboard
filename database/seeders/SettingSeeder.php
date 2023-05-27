@@ -13,8 +13,6 @@ class SettingSeeder extends Seeder
     {
         $settings = [
             'app_name' => config('app.name'),
-            'app_logo' => '/assets/images/logo.svg',
-            'app_icon' => '/assets/images/icon.png',
         ];
 
         foreach ($settings as $key => $value) {

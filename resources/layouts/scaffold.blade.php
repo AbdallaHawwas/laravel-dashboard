@@ -23,7 +23,7 @@
 
     <title>{{ $title }}</title>
 
-    <link rel="icon" href="{{ setting('app_icon') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
 
     {{-- Tabler Core --}}
     <link rel="stylesheet" href="{{ asset("/vendor/tabler/tabler.$direction.min.css") }}">
