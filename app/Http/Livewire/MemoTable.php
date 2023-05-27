@@ -41,9 +41,9 @@ class MemoTable extends DataTable
     public function actions(): array
     {
         return [
-            Action::view('memos.show'),
-            Action::edit('memos.edit'),
-            Action::delete('memos.destroy'),
+            Action::view('dashboard.memos.show'),
+            Action::edit('dashboard.memos.edit'),
+            Action::delete('dashboard.memos.destroy'),
         ];
     }
 }
