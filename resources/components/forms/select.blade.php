@@ -1,4 +1,4 @@
-@props(['name', 'title' => null, 'options' => [], 'selected' => null, 'required' => false])
+@props(['name', 'title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => []])
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">
@@ -10,10 +10,8 @@
     </label>
 @endif
 
-<select name="{{ $name }}" id="{{ $name }}" class="form-select"
+<select type="text" name="{{ $name }}" id="{{ $name }}" class="form-select"
     {{ $attributes->merge(['required' => $required]) }}>
-
-    <option value=""> -- {{ __('Select') }} -- </option>
 
     @foreach ($options as $key => $value)
         <option value="{{ $key }}" @selected($key == $selected)>{{ $value }}</option>
@@ -21,3 +19,15 @@
 </select>
 
 <x-components::forms.invalid-feedback :field="$name" />
+
+@if ($tom !== false)
+    @push('scripts')
+        <script>
+            new TomSelect('#{{ $name }}', {
+                create: false,
+                placeholder: '-- {{ __('Select') }} --',
+                ...@json($tom)
+            });
+        </script>
+    @endpush
+@endif
