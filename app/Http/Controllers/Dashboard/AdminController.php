@@ -78,6 +78,8 @@ class AdminController extends Controller
             'role' => 'required|exists:roles,id',
         ]);
 
+        cache()->flush();
+
         $admin->syncRoles($validated['role']);
 
         return redirect()->route('dashboard.admins.index')->with('success', __('Admin has been updated.'));

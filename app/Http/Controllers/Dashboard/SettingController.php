@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Setting;
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller

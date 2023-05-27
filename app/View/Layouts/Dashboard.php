@@ -83,7 +83,11 @@ class Dashboard extends Component
      */
     protected function hasPermissionTo(string $route): bool
     {
-        return Permission::whereName($route)->doesntExist() || Gate::allows($route);
+        $key = 'permission.' . $this->admin->id . '.' . $route;
+
+        return cache()->rememberForever($key, function () use ($route) {
+            return Permission::whereName($route)->doesntExist() || Gate::allows($route);
+        });
     }
 
     /**

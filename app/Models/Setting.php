@@ -22,8 +22,18 @@ class Setting extends Model
      */
     public static function get(string $key, mixed $default = null): mixed
     {
-        $setting = self::where('key', $key)->first();
+        return cache()->rememberForever($key, function () use ($key, $default) {
+            return static::where('key', $key)->value('value') ?? $default;
+        });
+    }
 
-        return $setting ? $setting->value : $default;
+    /**
+     * Perform any actions required after the model boots.
+     */
+    protected static function booted()
+    {
+        static::updated(function ($setting) {
+            cache()->forget($setting->key);
+        });
     }
 }
