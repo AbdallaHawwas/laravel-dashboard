@@ -20,6 +20,7 @@ class RoleSeeder extends Seeder
             'roles' => ['index', 'create', 'edit', 'destroy'],
             'admins' => ['index', 'create', 'edit', 'destroy'],
             'language' => ['index', 'edit', 'sync'],
+            'settings' => ['edit'],
         ];
 
         foreach ($permissions as $key => $value) {

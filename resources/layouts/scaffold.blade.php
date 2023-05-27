@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{{ asset('/vendor/tabler/tabler-vendors.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/vendor/tabler-icons/tabler-icons.min.css') }}">
 
+    {{-- Tabler Plugins --}}
+    <link rel="stylesheet" href="{{ asset('/vendor/tom-select/tom-select.min.css') }}">
+
     {{-- Custom Styles --}}
     <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
 
@@ -52,6 +55,7 @@
 
     {{-- Tabler Plugins --}}
     <script src="{{ asset('/vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('/vendor/tom-select/tom-select.min.js') }}"></script>
 
     {{-- Custom Scripts --}}
     <script src="{{ asset('/assets/js/app.js') }}"></script>
