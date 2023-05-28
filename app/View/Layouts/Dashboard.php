@@ -95,8 +95,8 @@ class Dashboard extends Component
      */
     protected function isActiveUrl(string $url): bool
     {
-        if ($url === url('/')) {
-            return request()->is('/');
+        if ($url === url('/dashboard')) {
+            return request()->is('dashboard');
         }
 
         return str_starts_with(request()->url(), $url);
