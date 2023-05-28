@@ -41,7 +41,7 @@ class Dashboard extends Component
             $item = $this->parseSidebarItem($item);
 
             if ($item !== false) {
-                array_push($sidebar, $item);
+                $sidebar[] = $item;
             }
         }
 
@@ -63,7 +63,7 @@ class Dashboard extends Component
         $item->title = $item->locales[$locale] ?? Arr::first($item->locales);
 
         $item->url = isset($item->route) ? route($item->route) : '#';
-        $item->active = $item->url ? $this->isActiveUrl($item->url) : false;
+        $item->active = $item->url && $this->isActiveUrl($item->url);
 
         if (isset($item->children)) {
             $item->children = collect($item->children)->map(fn ($child) => $this->parseSidebarItem($child))->filter();
