@@ -1,12 +1,14 @@
-@props(['name', 'title', 'value' => '', 'options' => [], 'required' => false])
+@props(['name', 'title' => null, 'value' => '', 'options' => [], 'required' => false])
 
-<label for="{{ $name }}" class="form-label">
-    {{ $title }}
+@if ($title)
+    <label for="{{ $name }}" class="form-label">
+        {{ $title }}
 
-    @if ($required)
-        <span class="text-danger">*</span>
-    @endif
-</label>
+        @if ($required)
+            <span class="text-danger">*</span>
+        @endif
+    </label>
+@endif
 
 <textarea name="{{ $name }}" id="{{ $name }}" {{ $attributes }}>{{ $value }}</textarea>
 
