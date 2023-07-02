@@ -3,7 +3,7 @@
     <x-components::status />
 
     <div class="card card-md">
-        <form class="card-body" method="POST">
+        <form class="card-body" method="POST" action="{{ route('dashboard.login.store') }}">
             @csrf
 
             <div class="text-center mb-4">

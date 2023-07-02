@@ -48,7 +48,7 @@ Route::middleware('dashboard.auth')->group(function () {
 Route::withoutMiddleware(\App\Http\Middleware\Dashboard\RoutePermission::class)->group(function () {
     Route::middleware('dashboard.guest')->group(function () {
         Route::get('/login', [\App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
-        Route::post('/login', [\App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController::class, 'store']);
+        Route::post('/login', [\App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController::class, 'store'])->name('login.store');
 
         Route::get('forgot-password', [\App\Http\Controllers\Dashboard\Auth\PasswordResetLinkController::class, 'create'])->name('password.request');
         Route::post('forgot-password', [\App\Http\Controllers\Dashboard\Auth\PasswordResetLinkController::class, 'store'])->name('password.email');

@@ -5,7 +5,7 @@
 
 <x-layouts::scaffold :title="$error" class="{{ $class }}">
     <div class="page page-center">
-        <div class="container-tight py-4">
+        <div class="container container-tight py-4">
             <div class="empty">
                 <div class="empty-header">
                     {{ $error }}
