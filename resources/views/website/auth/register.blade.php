@@ -17,9 +17,16 @@
                 </p>
             </div>
 
-            <div class="mb-3">
-                <x-components::forms.input type="text" name="name" :title="__('Name')" value="{{ old('name') }}"
-                    required />
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <x-components::forms.input type="text" name="first_name" :title="__('First name')"
+                        value="{{ old('first_name') }}" :placeholder="__('First name')" required />
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <x-components::forms.input type="text" name="last_name" :title="__('Last name')"
+                        value="{{ old('last_name') }}" :placeholder="__('Last name')" required />
+                </div>
             </div>
 
             <div class="mb-3">

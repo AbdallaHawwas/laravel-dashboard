@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', App\Http\Controllers\Website\HomeController::class)->name('index');
 
-
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
@@ -27,7 +26,7 @@ Route::get('/', App\Http\Controllers\Website\HomeController::class)->name('index
 |
 */
 
-Route::middleware('website.guest')->group(function () {
+Route::middleware('guest:users')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Website\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('/login', [\App\Http\Controllers\Website\Auth\AuthenticatedSessionController::class, 'store'])->name('login.store');
 
@@ -41,6 +40,6 @@ Route::middleware('website.guest')->group(function () {
     Route::post('reset-password', [\App\Http\Controllers\Website\Auth\NewPasswordController::class, 'store'])->name('password.store');
 });
 
-Route::middleware('website.auth')->group(function () {
+Route::middleware('auth:users')->group(function () {
     Route::post('/logout', [\App\Http\Controllers\Website\Auth\AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });

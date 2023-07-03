@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('dashboard.auth')->group(function () {
+Route::middleware('auth:admins')->group(function () {
     Route::get('/', \App\Http\Controllers\Dashboard\DashboardController::class)->name('index');
 
     Route::get('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,7 +46,7 @@ Route::middleware('dashboard.auth')->group(function () {
 */
 
 Route::withoutMiddleware(\App\Http\Middleware\Dashboard\RoutePermission::class)->group(function () {
-    Route::middleware('dashboard.guest')->group(function () {
+    Route::middleware('guest:admins')->group(function () {
         Route::get('/login', [\App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController::class, 'create'])->name('login');
         Route::post('/login', [\App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController::class, 'store'])->name('login.store');
 
@@ -57,7 +57,7 @@ Route::withoutMiddleware(\App\Http\Middleware\Dashboard\RoutePermission::class)-
         Route::post('reset-password', [\App\Http\Controllers\Dashboard\Auth\NewPasswordController::class, 'store'])->name('password.store');
     });
 
-    Route::middleware('dashboard.auth')->group(function () {
+    Route::middleware('auth:admins')->group(function () {
         Route::post('/logout', [\App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController::class, 'destroy'])->name('logout');
     });
 });

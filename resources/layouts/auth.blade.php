@@ -1,12 +1,6 @@
 <x-layouts::scaffold {{ $attributes->merge(['class' => 'd-flex flex-column border-top-wide border-primary']) }}>
     <div class="page page-center">
         <div class="container container-tight py-4">
-            <div class="text-center mb-4">
-                <p class="navbar-brand">
-                    <x-components::logo height="32" :alt="config('app.name')" class="navbar-brand-image" />
-                </p>
-            </div>
-
             {{ $slot }}
 
             @if (count(config('app.locales')) > 1)

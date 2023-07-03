@@ -12,8 +12,8 @@
                 </h2>
 
                 <p class="text-muted">
-                    {{ __('Forgot your password?') }}
-                    <a href="{{ route('website.password.request') }}">{{ __('Reset password') }}</a>
+                    {{ __('Don\'t have account yet?') }}
+                    <a href="{{ route('website.register') }}">{{ __('Sign up') }}</a>
                 </p>
             </div>
 
@@ -38,10 +38,10 @@
                 <button type="submit" class="btn btn-primary w-100">{{ __('Sign in') }}</button>
             </div>
 
-            <div class="text-center text-muted mt-3">
-                {{ __('Don\'t have account yet?') }}
-                <a href="{{ route('website.register') }}">{{ __('Sign up') }}</a>
-            </div>
+            <p class="text-muted text-center mt-3">
+                {{ __('Forgot your password?') }}
+                <a href="{{ route('website.password.request') }}">{{ __('Reset password') }}</a>
+            </p>
         </form>
     </div>
 </x-layouts::auth>
