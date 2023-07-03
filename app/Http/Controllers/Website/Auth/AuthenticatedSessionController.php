@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard\Auth;
+namespace App\Http\Controllers\Website\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\Auth\LoginRequest;
+use App\Http\Requests\Website\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('dashboard.auth.login');
+        return view('website.auth.login');
     }
 
     /**
@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard.index'));
+        return redirect()->intended(route('website.index'));
     }
 
     /**
@@ -36,7 +36,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::guard('admins')->logout();
+        Auth::guard('users')->logout();
 
         // Keep the locale when logging out
         $locale = $request->session()->get('locale', config('app.locale'));
@@ -46,6 +46,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->put('locale', $locale);
 
-        return redirect()->route('dashboard.index');
+        return redirect()->route('website.index');
     }
 }

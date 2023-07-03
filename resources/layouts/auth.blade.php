@@ -2,9 +2,9 @@
     <div class="page page-center">
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
-                <a href="{{ route('dashboard.index') }}" class="navbar-brand">
+                <p class="navbar-brand">
                     <x-components::logo height="32" :alt="config('app.name')" class="navbar-brand-image" />
-                </a>
+                </p>
             </div>
 
             {{ $slot }}

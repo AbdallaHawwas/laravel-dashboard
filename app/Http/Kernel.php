@@ -35,6 +35,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\Localization::class,
         ],
 
         'web' => [
@@ -43,7 +44,6 @@ class Kernel extends HttpKernel
 
         'dashboard' => [
             'client',
-            \App\Http\Middleware\Dashboard\Localization::class,
             \App\Http\Middleware\Dashboard\RoutePermission::class,
         ],
 
@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
     protected $middlewareAliases = [
         'dashboard.auth' => \App\Http\Middleware\Dashboard\Authenticate::class,
         'dashboard.guest' => \App\Http\Middleware\Dashboard\RedirectIfAuthenticated::class,
+        'website.auth' => \App\Http\Middleware\Website\Authenticate::class,
+        'website.guest' => \App\Http\Middleware\Website\RedirectIfAuthenticated::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

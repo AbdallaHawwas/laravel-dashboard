@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware\Dashboard;
+namespace App\Http\Middleware\Website;
 
 use App\Providers\RouteServiceProvider;
 use Closure;
@@ -15,10 +15,10 @@ class RedirectIfAuthenticated
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string ...$guards): Response
     {
-        if (Auth::guard('admins')->check()) {
-            return redirect(RouteServiceProvider::DASHBOARD);
+        if (Auth::guard('users')->check()) {
+            return redirect(RouteServiceProvider::HOME);
         }
 
         return $next($request);
