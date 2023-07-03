@@ -16,22 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:admins')->group(function () {
     Route::get('/', \App\Http\Controllers\Dashboard\DashboardController::class)->name('index');
 
-    Route::get('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'update'])->name('profile.update')->middleware('image.optimize');
+    /* --------- Website Management --------- */
+    Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class)->only(['index', 'destroy']);
 
-    Route::resource('language', \App\Http\Controllers\Dashboard\LanguageController::class)->only(['index', 'edit', 'update']);
-    Route::resource('language', \App\Http\Controllers\Dashboard\LanguageController::class)->only(['show'])->withoutMiddleware(['dashboard.auth']);
-    Route::get('language/{locale}/sync', [\App\Http\Controllers\Dashboard\SyncLanguageController::class, 'update'])->name('language.sync');
-
+    /* --------- Utilities --------- */
     Route::resource('memos', \App\Http\Controllers\Dashboard\MemoController::class);
     Route::resource('qr-code', \App\Http\Controllers\Dashboard\QrCodeController::class)->only(['index']);
     Route::resource('impersonate', \App\Http\Controllers\Dashboard\ImpersonateController::class)->only(['create', 'store']);
+
+    /* --------- Settings --------- */
+    Route::get('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'update'])->name('profile.update')->middleware('image.optimize');
 
     Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class)->except(['show']);
     Route::resource('admins', \App\Http\Controllers\Dashboard\AdminController::class)->except(['show']);
 
     Route::get('settings', [\App\Http\Controllers\Dashboard\SettingController::class, 'edit'])->name('settings.edit');
     Route::put('settings', [\App\Http\Controllers\Dashboard\SettingController::class, 'update'])->name('settings.update');
+
+    Route::resource('language', \App\Http\Controllers\Dashboard\LanguageController::class)->only(['index', 'edit', 'update']);
+    Route::resource('language', \App\Http\Controllers\Dashboard\LanguageController::class)->only(['show'])->withoutMiddleware(['dashboard.auth']);
+    Route::get('language/{locale}/sync', [\App\Http\Controllers\Dashboard\SyncLanguageController::class, 'update'])->name('language.sync');
 });
 
 /*

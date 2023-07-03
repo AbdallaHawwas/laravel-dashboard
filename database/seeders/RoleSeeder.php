@@ -16,6 +16,7 @@ class RoleSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         $permissions = [
+            'users' => ['index', 'destroy'],
             'impersonate' => ['create'],
             'roles' => ['index', 'create', 'edit', 'destroy'],
             'admins' => ['index', 'create', 'edit', 'destroy'],

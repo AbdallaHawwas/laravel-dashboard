@@ -23,6 +23,24 @@ return [
     ],
 
     [
+        'icon' => 'ti ti-world-www',
+        'locales' => [
+            'en' => 'Website Management',
+            'ar' => 'إدارة الموقع',
+        ],
+
+        'children' => [
+            [
+                'route' => 'dashboard.users.index',
+                'locales' => [
+                    'en' => 'Users Management',
+                    'ar' => 'إدارة المستخدمين',
+                ],
+            ],
+        ],
+    ],
+
+    [
         'icon' => 'ti ti-clipboard',
         'locales' => [
             'en' => 'Utilities',
