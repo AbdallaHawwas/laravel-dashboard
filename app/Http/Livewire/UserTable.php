@@ -24,10 +24,10 @@ class UserTable extends Datatable
     public function columns(): array
     {
         return [
-            Column::make(__('First Name'), 'first_name')
+            Column::make(__('First name'), 'first_name')
                 ->searchable()
                 ->sortable(),
-            Column::make(__('Last Name'), 'last_name')
+            Column::make(__('Last name'), 'last_name')
                 ->searchable()
                 ->sortable(),
             Column::make(__('Email'), 'email')
