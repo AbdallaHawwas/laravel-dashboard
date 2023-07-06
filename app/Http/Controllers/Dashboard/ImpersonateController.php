@@ -29,7 +29,7 @@ class ImpersonateController extends Controller
             'admin_id' => ['required', 'exists:admins,id'],
         ]);
 
-        Auth::login(Admin::find($request->admin_id));
+        Auth::guard('admins')->login(Admin::find($request->admin_id));
 
         toastify()->success(__('Impersonating :name', ['name' => Auth::user()->name]));
 
