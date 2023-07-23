@@ -1,4 +1,5 @@
 @props(['name', 'title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => []])
+@php $id = uniqid('select-'); @endphp
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">
@@ -10,7 +11,7 @@
     </label>
 @endif
 
-<select type="text" name="{{ $name }}" id="{{ $name }}" class="form-select"
+<select type="text" name="{{ $name }}" id="{{ $id }}" class="form-select"
     {{ $attributes->merge(['required' => $required]) }}>
 
     @foreach ($options as $key => $value)
@@ -18,12 +19,12 @@
     @endforeach
 </select>
 
-<x-components::forms.invalid-feedback :field="$name" />
+<x-components::forms.invalid-feedback :field="$id" />
 
 @if ($tom !== false)
     @push('scripts')
         <script>
-            new TomSelect('#{{ $name }}', {
+            new TomSelect('#{{ $id }}', {
                 create: false,
                 placeholder: '-- {{ __('Select') }} --',
                 ...@json($tom)

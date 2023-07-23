@@ -1,4 +1,5 @@
 @props(['name', 'title' => null, 'value' => '', 'options' => [], 'required' => false])
+@php $id = uniqid('mce-'); @endphp
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">
@@ -10,12 +11,12 @@
     </label>
 @endif
 
-<textarea name="{{ $name }}" id="{{ $name }}" {{ $attributes }}>{{ $value }}</textarea>
+<textarea name="{{ $name }}" id="{{ $id }}" {{ $attributes }}>{{ $value }}</textarea>
 
-<x-components::forms.invalid-feedback :field="$name" />
+<x-components::forms.invalid-feedback :field="$id" />
 
 @push('scripts')
     <script>
-        initTinyMCE('#{{ $name }}', @json($options));
+        initTinyMCE('#{{ $id }}', @json($options));
     </script>
 @endpush

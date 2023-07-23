@@ -8,7 +8,7 @@
     @push('scripts')
         <script>
             $(document).ready(function() {
-                $('[name={{ $field }}], #{{ $field }}').addClass('is-invalid');
+                $('[name="{{ $field }}"], #{{ $field }}').addClass('is-invalid');
             })
         </script>
     @endpush

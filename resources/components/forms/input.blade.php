@@ -1,5 +1,6 @@
 @props(['name', 'title' => null, 'type' => 'text', 'required' => false])
 @php $isPassword = strtolower($type) === 'password'; @endphp
+@php $id = uniqid('input-'); @endphp
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">
@@ -12,7 +13,7 @@
 @endif
 
 <div @class(['col', 'input-group' => $isPassword])>
-    <input type="{{ $type }}" name="{{ $name }}" id="{{ $name }}" class="form-control"
+    <input type="{{ $type }}" name="{{ $name }}" id="{{ $id }}" class="form-control"
         {{ $attributes->merge(['required' => $required]) }}>
 
     @if ($isPassword)
@@ -23,5 +24,5 @@
         </span>
     @endif
 
-    <x-components::forms.invalid-feedback :field="$name" />
+    <x-components::forms.invalid-feedback :field="$id" />
 </div>
