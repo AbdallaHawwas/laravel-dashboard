@@ -1,4 +1,4 @@
-<x-layouts::auth :title="__('Verify your email address')">
+<x-layouts::website.auth :title="__('Verify your email address')">
 
     <form class="d-none" method="POST" action="{{ route('website.verification.send') }}" id="resend-verification-email-form">
         @csrf
@@ -14,4 +14,4 @@
             <p class="text-muted mb-0">{{ __('If you did not receive the email') }}, <a href="#" onclick="event.preventDefault(); document.getElementById('resend-verification-email-form').submit();">{{ __('click here to request another') }}</a>.</p>
         </div>
     </div>
-</x-layouts::auth>
+</x-layouts::website.auth>

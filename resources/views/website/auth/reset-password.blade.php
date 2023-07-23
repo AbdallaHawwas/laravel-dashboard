@@ -1,4 +1,4 @@
-<x-layouts::auth :title="__('Reset password')">
+<x-layouts::website.auth :title="__('Reset password')">
 
     <x-components::status />
 
@@ -33,4 +33,4 @@
             </div>
         </form>
     </div>
-</x-layouts::auth>
+</x-layouts::website.auth>

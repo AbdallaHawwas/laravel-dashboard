@@ -1,4 +1,4 @@
-<x-layouts::auth :title="__('Login to your account')">
+<x-layouts::website.auth :title="__('Login to your account')">
 
     <x-components::status />
 
@@ -44,4 +44,4 @@
             </p>
         </form>
     </div>
-</x-layouts::auth>
+</x-layouts::website.auth>
