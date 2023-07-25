@@ -1,5 +1,4 @@
-@props(['name', 'title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => []])
-@php $id = uniqid('select-'); @endphp
+@props(['name', 'title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => [], 'id' => uniqid('select-')])
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">

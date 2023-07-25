@@ -1,5 +1,4 @@
-@props(['name', 'title' => null, 'value' => '', 'options' => [], 'required' => false])
-@php $id = uniqid('mce-'); @endphp
+@props(['name', 'title' => null, 'value' => '', 'options' => [], 'required' => false, 'id' => uniqid('tinymce-')])
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">

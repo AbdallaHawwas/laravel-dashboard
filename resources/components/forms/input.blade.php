@@ -1,6 +1,5 @@
-@props(['name', 'title' => null, 'type' => 'text', 'required' => false])
+@props(['name', 'title' => null, 'type' => 'text', 'required' => false, 'id' => uniqid('input-')])
 @php $isPassword = strtolower($type) === 'password'; @endphp
-@php $id = uniqid('input-'); @endphp
 
 @if ($title)
     <label for="{{ $name }}" class="form-label">
