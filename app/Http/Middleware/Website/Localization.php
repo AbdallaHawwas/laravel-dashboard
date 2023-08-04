@@ -3,6 +3,7 @@
 namespace App\Http\Middleware\Website;
 
 use Closure;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -19,7 +20,9 @@ class Localization
             $locale = session()->get('website_locale');
 
             if (! in_array($locale, config('app.website_locales'))) {
-                session()->put('website_locale', config('app.locale'));
+                $fallback = Arr::first(config('app.website_locales'));
+
+                session()->put('website_locale', $fallback);
             }
 
             app()->setLocale(session()->get('website_locale'));
