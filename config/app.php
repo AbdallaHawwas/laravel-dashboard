@@ -84,7 +84,9 @@ return [
 
     'locale' => 'en',
 
-    'locales' => ['en', 'ar'],
+    'website_locales' => ['en', 'ar'],
+
+    'dashboard_locales' => ['en', 'ar'],
 
     /*
     |--------------------------------------------------------------------------

@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="navbar-nav flex-row order-md-last gap-2">
-                    @if (count(config('app.locales')) > 1)
+                    @if (count(config('app.dashboard_locales')) > 1)
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle px-0" href="#" data-bs-toggle="dropdown">
                                 <span class="nav-link-icon"><i class="ti ti-world"></i></span>
@@ -42,7 +42,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end">
-                                @foreach (config('app.locales') as $locale)
+                                @foreach (config('app.dashboard_locales') as $locale)
                                     <a class="dropdown-item" href="{{ route('dashboard.language.show', $locale) }}">
                                         <span class="nav-link-title">{{ __('languages.' . $locale) }}</span>
                                     </a>

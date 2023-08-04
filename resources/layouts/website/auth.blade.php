@@ -3,11 +3,11 @@
         <div class="container container-tight py-4">
             {{ $slot }}
 
-            @if (count(config('app.locales')) > 1)
+            @if (count(config('app.website_locales')) > 1)
                 <ul class="list-inline list-inline-dots mt-3 mb-0 text-center">
-                    @foreach (config('app.locales') as $locale)
+                    @foreach (config('app.website_locales') as $locale)
                         <li class="list-inline-item">
-                            <a href="{{ route('dashboard.language.show', $locale) }}" class="link-secondary text-decoration-none">
+                            <a href="{{ route('website.language.show', $locale) }}" class="link-secondary text-decoration-none">
                                 {{ __('languages.' . $locale) }}
                             </a>
                         </li>

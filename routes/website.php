@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', App\Http\Controllers\Website\HomeController::class)->name('index');
+Route::resource('language', \App\Http\Controllers\Website\LanguageController::class)->only(['show']);
 
 /*
 |--------------------------------------------------------------------------

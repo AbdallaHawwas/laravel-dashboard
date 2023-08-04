@@ -38,13 +38,8 @@ class AuthenticatedSessionController extends Controller
     {
         Auth::guard('users')->logout();
 
-        // Keep the locale when logging out
-        $locale = $request->session()->get('locale', config('app.locale'));
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
-        $request->session()->put('locale', $locale);
 
         return redirect()->route('website.index');
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Website;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -15,14 +15,14 @@ class Localization
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session()->has('locale')) {
-            $locale = session()->get('locale');
+        if (session()->has('website_locale')) {
+            $locale = session()->get('website_locale');
 
-            if (! in_array($locale, config('app.locales'))) {
-                session()->put('locale', config('app.locale'));
+            if (! in_array($locale, config('app.website_locales'))) {
+                session()->put('website_locale', config('app.locale'));
             }
 
-            app()->setLocale(session()->get('locale'));
+            app()->setLocale(session()->get('website_locale'));
         }
 
         return $next($request);

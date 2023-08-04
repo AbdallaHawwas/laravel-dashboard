@@ -12,8 +12,10 @@ class LanguageController extends Controller
      */
     public function index()
     {
+        $languages = array_unique([...config('app.website_locales'), ...config('app.dashboard_locales')]);
+
         return view('dashboard.language.index', [
-            'languages' => config('app.locales'),
+            'languages' => $languages,
         ]);
     }
 
@@ -54,12 +56,12 @@ class LanguageController extends Controller
     {
         $locale = strtolower($locale);
 
-        if (! in_array($locale, config('app.locales'))) {
+        if (! in_array($locale, config('app.dashboard_locales'))) {
             return abort(404);
         }
 
         app()->setLocale($locale);
-        session()->put('locale', $locale);
+        session()->put('dashboard_locale', $locale);
 
         return redirect()->back();
     }

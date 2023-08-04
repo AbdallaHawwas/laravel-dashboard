@@ -35,15 +35,16 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\Localization::class,
         ],
 
         'web' => [
             'client',
+            \App\Http\Middleware\Website\Localization::class,
         ],
 
         'dashboard' => [
             'client',
+            \App\Http\Middleware\Dashboard\Localization::class,
             \App\Http\Middleware\Dashboard\RoutePermission::class,
         ],
 

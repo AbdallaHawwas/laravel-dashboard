@@ -10,7 +10,7 @@ return [
     | Contains an array with the applications available locales.
     |
     */
-    'locales' => config('app.locales'),
+    'locales' => array_unique([...config('app.dashboard_locales'), ...config('app.website_locales')]),
 
     /*
     |--------------------------------------------------------------------------
