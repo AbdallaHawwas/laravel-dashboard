@@ -3,8 +3,8 @@
 namespace App\Http\Middleware\Dashboard;
 
 use Closure;
-use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Symfony\Component\HttpFoundation\Response;
 
 class Localization
@@ -16,17 +16,15 @@ class Localization
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session()->has('dashboard_locale')) {
-            $locale = session()->get('dashboard_locale');
+        $fallback = Arr::first(config('app.dashboard_locales'));
+        $locale = session()->get('dashboard_locale', $fallback);
 
-            if (! in_array($locale, config('app.dashboard_locales'))) {
-                $fallback = Arr::first(config('app.dashboard_locales'));
-
-                session()->put('dashboard_locale', $fallback);
-            }
-
-            app()->setLocale(session()->get('dashboard_locale'));
+        if (! in_array($locale, config('app.dashboard_locales'))) {
+            $locale = $fallback;
         }
+
+        session()->put('dashboard_locale', $locale);
+        app()->setLocale(session()->get('dashboard_locale'));
 
         return $next($request);
     }
