@@ -27,7 +27,7 @@
                     </div>
                 @else
                     <div class="empty-action">
-                        <a href="{{ route('website.index') }}" class="btn btn-primary">
+                        <a href="{{ url('/') }}" class="btn btn-primary">
                             <i class="ti ti-arrow-left me-3"></i>
                             {{ __('Back to Home') }}
                         </a>
