@@ -16,6 +16,8 @@
     @foreach ($options as $key => $value)
         <option value="{{ $key }}" @selected($key == $selected)>{{ $value }}</option>
     @endforeach
+
+    {{ $slot }}
 </select>
 
 <x-components::forms.invalid-feedback :field="$id" />

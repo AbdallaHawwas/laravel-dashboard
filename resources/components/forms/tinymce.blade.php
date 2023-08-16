@@ -1,18 +1,6 @@
 @props(['name', 'title' => null, 'value' => '', 'options' => [], 'required' => false, 'id' => uniqid('tinymce-')])
 
-@if ($title)
-    <label for="{{ $name }}" class="form-label">
-        {{ $title }}
-
-        @if ($required)
-            <span class="text-danger">*</span>
-        @endif
-    </label>
-@endif
-
-<textarea name="{{ $name }}" id="{{ $id }}" {{ $attributes }}>{{ $value }}</textarea>
-
-<x-components::forms.invalid-feedback :field="$id" />
+<x-components::forms.textarea :name="$name" :title="$title" :value="$value" :required="$required" :id="$id" />
 
 @push('scripts')
     <script>
