@@ -17,7 +17,7 @@
 
     @if ($isPassword)
         <span class="input-group-text" tabindex="-1">
-            <a href="#" class="link-secondary text-decoration-none" onclick="event.preventDefault(); togglePassword(this, '#{{ $name }}')" title="{{ __('Toggle password visibility') }}" tabindex="-1">
+            <a href="#" class="link-secondary text-decoration-none" onclick="event.preventDefault(); togglePassword(this, '#{{ $id }}')" title="{{ __('Toggle password visibility') }}" tabindex="-1">
                 <i class="ti ti-eye"></i>
             </a>
         </span>
