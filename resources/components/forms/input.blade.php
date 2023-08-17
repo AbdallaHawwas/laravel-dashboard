@@ -1,4 +1,4 @@
-@props(['name', 'title' => null, 'type' => 'text', 'required' => false, 'id' => uniqid('input-')])
+@props(['name', 'title' => null, 'type' => 'text', 'required' => false, 'id' => uniqid('input-'), 'before' => null, 'after' => null])
 @php $isPassword = strtolower($type) === 'password'; @endphp
 
 @if ($title)
@@ -11,7 +11,11 @@
     </label>
 @endif
 
-<div @class(['col', 'input-group' => $isPassword])>
+<div @class(['col', 'input-group' => count(array_filter([$before, $after, $isPassword])) > 0])>
+    @if ($before)
+        <span class="input-group-text">{{ $before }}</span>
+    @endif
+
     <input type="{{ $type }}" name="{{ $name }}" id="{{ $id }}" class="form-control"
         {{ $attributes->merge(['required' => $required]) }}>
 
@@ -21,6 +25,10 @@
                 <i class="ti ti-eye"></i>
             </a>
         </span>
+    @endif
+
+    @if ($after)
+        <span class="input-group-text">{{ $after }}</span>
     @endif
 
     <x-components::forms.invalid-feedback :field="$id" />

@@ -1,4 +1,4 @@
-<x-layouts::dashboard :title="__('Settings')">
+<x-layouts::dashboard>
     <x-components::status />
 
     <form class="card" action="{{ route('dashboard.settings.update') }}" method="POST" enctype="multipart/form-data">
