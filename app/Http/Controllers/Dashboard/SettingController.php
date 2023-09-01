@@ -23,6 +23,8 @@ class SettingController extends Controller
     {
         $settings = $request->validate([
             'app_name' => 'required|string|max:255',
+            'google_analytics_property_id' => 'nullable|string|max:255',
+            'facebook_pixel_id' => 'nullable|string|max:255',
         ]);
 
         foreach ($settings as $key => $value) {

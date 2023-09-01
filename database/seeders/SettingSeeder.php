@@ -13,6 +13,8 @@ class SettingSeeder extends Seeder
     {
         $settings = [
             'app_name' => config('app.name'),
+            'google_analytics_property_id' => '',
+            'facebook_pixel_id' => '',
         ];
 
         foreach ($settings as $key => $value) {

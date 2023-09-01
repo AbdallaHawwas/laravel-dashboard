@@ -11,8 +11,15 @@
 
         <div class="card-body">
             <div class="mb-3">
-                <x-components::forms.input name="app_name" :title="__('App name')" value="{{ setting('app_name') }}"
-                    required />
+                <x-components::forms.input name="app_name" :title="__('App name')" value="{{ setting('app_name') }}" required />
+            </div>
+
+            <div class="mb-3">
+                <x-components::forms.input name="google_analytics_property_id" :title="__('Google Analytics property ID')" value="{{ setting('google_analytics_property_id') }}" />
+            </div>
+
+            <div class="mb-3">
+                <x-components::forms.input name="facebook_pixel_id" :title="__('Facebook Pixel ID')" value="{{ setting('facebook_pixel_id') }}" />
             </div>
         </div>
 
