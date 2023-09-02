@@ -37,7 +37,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255|unique:admins',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins',
             'role' => 'required|exists:roles,id',
         ]);
