@@ -1,6 +1,16 @@
-@props(['name', 'title' => null, 'value' => '', 'options' => [], 'required' => false, 'id' => uniqid('tinymce-')])
+@props(['title' => null, 'value' => '', 'options' => [], 'required' => false, 'id' => uniqid('tinymce-')])
 
-<x-components::forms.textarea :name="$name" :title="$title" :value="$value" :required="$required" :id="$id" />
+@if ($title)
+    <label for="{{ $id }}" class="form-label">
+        {{ $title }}
+
+        @if ($required)
+            <span class="text-danger">*</span>
+        @endif
+    </label>
+@endif
+
+<x-components::forms.textarea :value="$value" :id="$id" :required="false" {{ $attributes->only('name') }} />
 
 @push('scripts')
     <script>

@@ -1,7 +1,7 @@
-@props(['name', 'title' => null, 'value' => '', 'required' => false, 'id' => uniqid('textarea-')])
+@props(['title' => null, 'value' => '', 'required' => false, 'id' => uniqid('textarea-')])
 
 @if ($title)
-    <label for="{{ $name }}" class="form-label">
+    <label for="{{ $id }}" class="form-label">
         {{ $title }}
 
         @if ($required)
@@ -10,6 +10,7 @@
     </label>
 @endif
 
-<textarea class="form-control" name="{{ $name }}" id="{{ $id }}" {{ $attributes }}>{{ $value ?: $slot }}</textarea>
+<textarea id="{{ $id }}" {{ $attributes->merge(['class' => 'form-control']) }}
+    @if ($required) required @endif>{{ $value ?: $slot }}</textarea>
 
 <x-components::forms.invalid-feedback :field="$id" />
