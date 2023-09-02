@@ -1,8 +1,8 @@
-@props(['name', 'title' => null, 'type' => 'text', 'required' => false, 'id' => uniqid('input-'), 'before' => null, 'after' => null])
+@props(['title' => null, 'type' => 'text', 'required' => false, 'id' => uniqid('input-'), 'before' => null, 'after' => null])
 @php $isPassword = strtolower($type) === 'password'; @endphp
 
 @if ($title)
-    <label for="{{ $name }}" class="form-label">
+    <label for="{{ $id }}" class="form-label">
         {{ $title }}
 
         @if ($required)
@@ -11,13 +11,13 @@
     </label>
 @endif
 
-<div @class(['col', 'input-group' => count(array_filter([$before, $after, $isPassword])) > 0])>
+<div @class(['col', 'input-group' => $before || $after || $isPassword])>
     @if ($before)
         <span class="input-group-text">{{ $before }}</span>
     @endif
 
-    <input type="{{ $type }}" name="{{ $name }}" id="{{ $id }}" class="form-control"
-        {{ $attributes->merge(['required' => $required]) }}>
+    <input type="{{ $type }}" id="{{ $id }}" {{ $attributes->merge(['class' => 'form-control']) }}
+        @if ($required) required @endif />
 
     @if ($isPassword)
         <span class="input-group-text" tabindex="-1">
