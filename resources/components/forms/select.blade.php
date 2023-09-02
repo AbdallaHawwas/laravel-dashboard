@@ -1,7 +1,7 @@
-@props(['name', 'title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => [], 'id' => uniqid('select-')])
+@props(['title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => [], 'id' => uniqid('select-')])
 
 @if ($title)
-    <label for="{{ $name }}" class="form-label">
+    <label for="{{ $id }}" class="form-label">
         {{ $title }}
 
         @if ($required)
@@ -10,8 +10,8 @@
     </label>
 @endif
 
-<select type="text" name="{{ $name }}" id="{{ $id }}" class="form-select"
-    {{ $attributes->merge(['required' => $required]) }}>
+<select id="{{ $id }}" {{ $attributes->merge(['class' => 'form-select']) }}
+    @if ($required) required @endif>
 
     @foreach ($options as $key => $value)
         <option value="{{ $key }}" @selected($key == $selected)>{{ $value }}</option>
@@ -25,11 +25,15 @@
 @if ($tom !== false)
     @push('scripts')
         <script>
-            new TomSelect('#{{ $id }}', {
-                create: false,
-                placeholder: '-- {{ __('Select') }} --',
-                ...@json($tom)
-            });
+            (() => {
+                const instance = new TomSelect('#{{ $id }}', {
+                    create: false,
+                    placeholder: '-- {{ __('Select') }} --',
+                    ...@json($tom)
+                });
+
+                $('#{{ $id }}').data('tom', instance);
+            })();
         </script>
     @endpush
 @endif
