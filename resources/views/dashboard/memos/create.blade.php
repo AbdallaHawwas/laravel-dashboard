@@ -12,7 +12,7 @@
             </div>
 
             <div class="mb-3">
-                <x-components::forms.tinymce name="content" :title="__('Content')" :value="old('content')" required />
+                <x-components::forms.textarea name="content" :title="__('Content')" :value="old('content')" />
             </div>
         </div>
 

@@ -30,7 +30,7 @@ class MemoController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string'],
+            'content' => ['nullable', 'string'],
         ]);
 
         Memo::create($request->all());
@@ -65,7 +65,7 @@ class MemoController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string'],
+            'content' => ['nullable', 'string'],
         ]);
 
         $memo->update($request->all());
