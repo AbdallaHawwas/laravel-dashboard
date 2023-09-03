@@ -3315,18 +3315,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/livewire-datatable.git",
-                "reference": "94cf1905124a186f090fe62002888158d30cd325"
+                "reference": "473ebdd7e45c19b79f53794dc0364fcf36ddcb9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/94cf1905124a186f090fe62002888158d30cd325",
-                "reference": "94cf1905124a186f090fe62002888158d30cd325",
+                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/473ebdd7e45c19b79f53794dc0364fcf36ddcb9a",
+                "reference": "473ebdd7e45c19b79f53794dc0364fcf36ddcb9a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^8.0|^9.0|^10.0",
-                "illuminate/database": "^8.0|^9.0|^10.0",
-                "illuminate/support": "^8.0|^9.0|^10.0",
+                "illuminate/console": "^10.0",
+                "illuminate/database": "^10.0",
+                "illuminate/support": "^10.0",
                 "livewire/livewire": "^3.0",
                 "php": "^8.1"
             },
@@ -3364,7 +3364,7 @@
                 "issues": "https://github.com/redot-src/livewire-datatable/issues",
                 "source": "https://github.com/redot-src/livewire-datatable/tree/v1.1.0"
             },
-            "time": "2023-09-02T23:43:03+00:00"
+            "time": "2023-09-03T00:55:31+00:00"
         },
         {
             "name": "spatie/image-optimizer",
