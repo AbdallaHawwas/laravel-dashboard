@@ -1,4 +1,8 @@
-@props(['title' => null, 'options' => [], 'selected' => null, 'required' => false, 'tom' => [], 'id' => uniqid('select-')])
+@props(['title' => null, 'options' => [], 'selected' => null, 'tom' => true, 'id' => uniqid('select-')])
+
+@php
+    $required = $attributes->get('required') ?? false;
+@endphp
 
 @if ($title)
     <label for="{{ $id }}" class="form-label">
@@ -10,8 +14,7 @@
     </label>
 @endif
 
-<select id="{{ $id }}" {{ $attributes->merge(['class' => 'form-select']) }}
-    @if ($required) required @endif>
+<select id="{{ $id }}" {{ $attributes->merge(['class' => 'form-select']) }}>
 
     @foreach ($options as $key => $value)
         <option value="{{ $key }}" @selected($key == $selected)>{{ $value }}</option>
@@ -22,14 +25,13 @@
 
 <x-components::forms.invalid-feedback :field="$id" />
 
-@if ($tom !== false)
+@if ($tom)
     @push('scripts')
         <script>
             (() => {
                 const instance = new TomSelect('#{{ $id }}', {
                     create: false,
                     placeholder: '-- {{ __('Select') }} --',
-                    ...@json($tom)
                 });
 
                 $('#{{ $id }}').data('tom', instance);

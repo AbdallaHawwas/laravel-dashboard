@@ -1,5 +1,11 @@
-@props(['title' => null, 'type' => 'text', 'required' => false, 'id' => uniqid('input-'), 'before' => null, 'after' => null])
-@php $isPassword = strtolower($type) === 'password'; @endphp
+@props(['title' => null, 'id' => uniqid('input-'), 'before' => null, 'after' => null])
+
+@php
+    $type = strtolower($attributes->get('type') ?? 'text');
+    $isPassword = $type === 'password';
+
+    $required = $attributes->get('required') ?? false;
+@endphp
 
 @if ($title)
     <label for="{{ $id }}" class="form-label">
@@ -16,15 +22,12 @@
         <span class="input-group-text">{{ $before }}</span>
     @endif
 
-    <input type="{{ $type }}" id="{{ $id }}" {{ $attributes->merge(['class' => 'form-control']) }}
-        @if ($required) required @endif />
+    <input type="{{ $type }}" id="{{ $id }}" {{ $attributes->merge(['class' => 'form-control']) }} />
 
     @if ($isPassword)
-        <span class="input-group-text" tabindex="-1">
-            <a href="#" class="link-secondary text-decoration-none" onclick="event.preventDefault(); togglePassword(this, '#{{ $id }}')" title="{{ __('Toggle password visibility') }}" tabindex="-1">
-                <i class="ti ti-eye"></i>
-            </a>
-        </span>
+        <button type="button" class="input-group-text" onclick="togglePassword(this, '#{{ $id }}')" tabindex="-1">
+            <i class="ti ti-eye"></i>
+        </button>
     @endif
 
     @if ($after)
