@@ -1,4 +1,4 @@
 <x-layouts::dashboard :title="__('Manage Memos')">
     <x-components::status />
-    <livewire:memo-table />
+    <livewire:memos-table />
 </x-layouts::dashboard>

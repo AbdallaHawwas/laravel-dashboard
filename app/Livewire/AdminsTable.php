@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Admin;
 use Illuminate\Database\Eloquent\Builder;
@@ -8,7 +8,7 @@ use Redot\LivewireDatatable\Action;
 use Redot\LivewireDatatable\Column;
 use Redot\LivewireDatatable\Datatable;
 
-class AdminTable extends Datatable
+class AdminsTable extends Datatable
 {
     /**
      * Create a new component instance.

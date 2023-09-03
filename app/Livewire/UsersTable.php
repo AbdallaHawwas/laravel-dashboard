@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
@@ -8,7 +8,7 @@ use Redot\LivewireDatatable\Action;
 use Redot\LivewireDatatable\Column;
 use Redot\LivewireDatatable\Datatable;
 
-class UserTable extends Datatable
+class UsersTable extends Datatable
 {
     /**
      * Query builder.

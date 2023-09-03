@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Illuminate\Database\Eloquent\Builder;
 use Redot\LivewireDatatable\Action;
@@ -8,7 +8,7 @@ use Redot\LivewireDatatable\Column;
 use Redot\LivewireDatatable\Datatable;
 use Spatie\Permission\Models\Role;
 
-class RoleTable extends DataTable
+class RolesTable extends DataTable
 {
     /**
      * Create a new component instance.

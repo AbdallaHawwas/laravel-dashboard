@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Memo;
 use Illuminate\Database\Eloquent\Builder;
@@ -8,7 +8,7 @@ use Redot\LivewireDatatable\Action;
 use Redot\LivewireDatatable\Column;
 use Redot\LivewireDatatable\Datatable;
 
-class MemoTable extends DataTable
+class MemosTable extends DataTable
 {
     /**
      * Create button.

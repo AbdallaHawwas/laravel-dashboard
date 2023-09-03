@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66940822df20c092c5b969095b6f07d3",
+    "content-hash": "00846d1cc6ea7cf09a1f18f80d244ddc",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -1898,33 +1898,33 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.12.6",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "7d3a57b3193299cf1a0639a3935c696f4da2cf92"
+                "reference": "2e426e8d47e03c4777334ec0c8397341bcfa15f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/7d3a57b3193299cf1a0639a3935c696f4da2cf92",
-                "reference": "7d3a57b3193299cf1a0639a3935c696f4da2cf92",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/2e426e8d47e03c4777334ec0c8397341bcfa15f3",
+                "reference": "2e426e8d47e03c4777334ec0c8397341bcfa15f3",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "^7.0|^8.0|^9.0|^10.0",
-                "illuminate/support": "^7.0|^8.0|^9.0|^10.0",
-                "illuminate/validation": "^7.0|^8.0|^9.0|^10.0",
+                "illuminate/database": "^10.0|^11.0",
+                "illuminate/support": "^10.0|^11.0",
+                "illuminate/validation": "^10.0|^11.0",
                 "league/mime-type-detection": "^1.9",
-                "php": "^7.2.5|^8.0",
+                "php": "^8.1",
                 "symfony/http-kernel": "^5.0|^6.0"
             },
             "require-dev": {
                 "calebporzio/sushi": "^2.1",
-                "laravel/framework": "^7.0|^8.0|^9.0|^10.0",
+                "laravel/framework": "^10.0|^11.0",
                 "mockery/mockery": "^1.3.1",
-                "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
-                "orchestra/testbench-dusk": "^5.2|^6.0|^7.0|^8.0",
-                "phpunit/phpunit": "^8.4|^9.0",
+                "orchestra/testbench": "^7.0|^8.0",
+                "orchestra/testbench-dusk": "^7.0|^8.0",
+                "phpunit/phpunit": "^9.0",
                 "psy/psysh": "@stable"
             },
             "type": "library",
@@ -1959,7 +1959,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v2.12.6"
+                "source": "https://github.com/livewire/livewire/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -1967,7 +1967,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-11T04:02:34+00:00"
+            "time": "2023-08-25T18:13:03+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3311,23 +3311,23 @@
         },
         {
             "name": "redot/livewire-datatable",
-            "version": "v1.0.3",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/livewire-datatable.git",
-                "reference": "3d7e380b247cdc7a5f2bf4a29517afb26ba72279"
+                "reference": "94cf1905124a186f090fe62002888158d30cd325"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/3d7e380b247cdc7a5f2bf4a29517afb26ba72279",
-                "reference": "3d7e380b247cdc7a5f2bf4a29517afb26ba72279",
+                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/94cf1905124a186f090fe62002888158d30cd325",
+                "reference": "94cf1905124a186f090fe62002888158d30cd325",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^8.0|^9.0|^10.0",
                 "illuminate/database": "^8.0|^9.0|^10.0",
                 "illuminate/support": "^8.0|^9.0|^10.0",
-                "livewire/livewire": "^2.0",
+                "livewire/livewire": "^3.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -3362,9 +3362,9 @@
             "description": "A Laravel package to easily handle server-side datatables in Livewire",
             "support": {
                 "issues": "https://github.com/redot-src/livewire-datatable/issues",
-                "source": "https://github.com/redot-src/livewire-datatable/tree/v1.0.3"
+                "source": "https://github.com/redot-src/livewire-datatable/tree/v1.1.0"
             },
-            "time": "2023-07-31T07:12:10+00:00"
+            "time": "2023-09-02T23:43:03+00:00"
         },
         {
             "name": "spatie/image-optimizer",
