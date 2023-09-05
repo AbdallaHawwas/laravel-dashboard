@@ -1,6 +1,7 @@
 @props(['title' => null, 'options' => [], 'selected' => null, 'tom' => true, 'id' => uniqid('select-')])
 
 @php
+    $name = $attributes->get('name') ?? false;
     $required = $attributes->get('required') ?? false;
 @endphp
 
@@ -23,7 +24,9 @@
     {{ $slot }}
 </select>
 
-<x-components::forms.invalid-feedback :field="$id" />
+@if ($name)
+    <x-components::forms.invalid-feedback :name="$name" />
+@endif
 
 @if ($tom)
     @push('scripts')

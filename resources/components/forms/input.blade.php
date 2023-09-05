@@ -4,6 +4,7 @@
     $type = strtolower($attributes->get('type') ?? 'text');
     $isPassword = $type === 'password';
 
+    $name = $attributes->get('name') ?? false;
     $required = $attributes->get('required') ?? false;
 @endphp
 
@@ -34,5 +35,7 @@
         <span class="input-group-text">{{ $after }}</span>
     @endif
 
-    <x-components::forms.invalid-feedback :field="$id" />
+    @if ($name)
+        <x-components::forms.invalid-feedback :name="$name" />
+    @endif
 </div>

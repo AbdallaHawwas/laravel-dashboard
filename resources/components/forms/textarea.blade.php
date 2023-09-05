@@ -1,6 +1,7 @@
 @props(['title' => null, 'value' => '', 'id' => uniqid('textarea-')])
 
 @php
+    $name = $attributes->get('name') ?? false;
     $required = $attributes->get('required') ?? false;
 @endphp
 
@@ -16,4 +17,6 @@
 
 <textarea id="{{ $id }}" {{ $attributes->merge(['class' => 'form-control']) }}>{{ $value ?: $slot }}</textarea>
 
-<x-components::forms.invalid-feedback :field="$id" />
+@if ($name)
+    <x-components::forms.invalid-feedback :name="$name" />
+@endif
