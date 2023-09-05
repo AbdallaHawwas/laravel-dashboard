@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Jobs\SendNewAdminNotification;
 use App\Models\Admin;
-use App\Notifications\NewAdminNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -51,7 +51,8 @@ class AdminController extends Controller
         ]);
 
         $admin->assignRole($validated['role']);
-        $admin->notify(new NewAdminNotification($password));
+
+        SendNewAdminNotification::dispatch($admin, $password);
 
         return redirect()->route('dashboard.admins.index')->with('success', __('Admin has been created.'));
     }
