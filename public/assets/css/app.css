@@ -38,3 +38,8 @@ ul.pagination {
 [dir="rtl"] .dropdown-menu-arrow:before {
     transform: rotate(45deg);
 }
+
+/* Fix for tom-select placeholder appear if value is set */
+[data-ts-item] + input::placeholder {
+    opacity: 0;
+}

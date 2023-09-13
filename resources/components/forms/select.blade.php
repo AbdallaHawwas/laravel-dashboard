@@ -1,8 +1,12 @@
-@props(['title' => null, 'options' => [], 'selected' => null, 'tom' => true, 'id' => uniqid('select-')])
+@props(['title' => null, 'options' => [], 'selected' => null, 'tom' => true, 'id' => uniqid('select-'), 'placeholder' => null])
 
 @php
     $name = $attributes->get('name') ?? false;
     $required = $attributes->get('required') ?? false;
+
+    if ($name && str_ends_with($name, '[]') && $attributes->has('multiple') === false) {
+        $attributes = $attributes->merge(['multiple' => true]);
+    }
 @endphp
 
 @if ($title)
@@ -34,7 +38,7 @@
             (() => {
                 const instance = new TomSelect('#{{ $id }}', {
                     create: false,
-                    placeholder: '-- {{ __('Select') }} --',
+                    placeholder: '{{ $placeholder ?? __('Select an option') }}',
                 });
 
                 $('#{{ $id }}').data('tom', instance);
