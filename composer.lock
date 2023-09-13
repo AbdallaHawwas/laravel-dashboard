@@ -3259,20 +3259,20 @@
         },
         {
             "name": "redot/laravel-toastify",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/laravel-toastify.git",
-                "reference": "9e48a20dcf61fdc2ab895fc1ce853567cf44ceb9"
+                "reference": "a9e6e2cb5871908ab480a1e3cecdec4ed6d5e6ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/laravel-toastify/zipball/9e48a20dcf61fdc2ab895fc1ce853567cf44ceb9",
-                "reference": "9e48a20dcf61fdc2ab895fc1ce853567cf44ceb9",
+                "url": "https://api.github.com/repos/redot-src/laravel-toastify/zipball/a9e6e2cb5871908ab480a1e3cecdec4ed6d5e6ea",
+                "reference": "a9e6e2cb5871908ab480a1e3cecdec4ed6d5e6ea",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^8.0|^9.0|^10.0",
+                "illuminate/support": "^10.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -3307,9 +3307,9 @@
             "description": "A simple package to use toastify.js in laravel applications",
             "support": {
                 "issues": "https://github.com/redot-src/laravel-toastify/issues",
-                "source": "https://github.com/redot-src/laravel-toastify/tree/v1.0.1"
+                "source": "https://github.com/redot-src/laravel-toastify/tree/v1.0.2"
             },
-            "time": "2023-06-20T19:35:35+00:00"
+            "time": "2023-09-13T21:40:27+00:00"
         },
         {
             "name": "redot/livewire-datatable",
