@@ -22,6 +22,11 @@ class Dashboard extends Component
     public array $sidebar = [];
 
     /**
+     * Current page title.
+     */
+    public string $title = '';
+
+    /**
      * Create a new component instance.
      */
     public function __construct()
@@ -64,6 +69,9 @@ class Dashboard extends Component
 
         $item->url = isset($item->route) ? route($item->route) : '#';
         $item->active = $item->url && $this->isActiveUrl($item->url);
+
+        // Set the page title to the current item title if it's active.
+        if ($item->active) $this->title = $item->title;
 
         if (isset($item->children)) {
             $item->children = collect($item->children)->map(fn ($child) => $this->parseSidebarItem($child))->filter();

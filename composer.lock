@@ -3317,16 +3317,16 @@
         },
         {
             "name": "redot/livewire-datatable",
-            "version": "v1.1.2",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/redot-src/livewire-datatable.git",
-                "reference": "d133b432ca29fe56b5e153719ba81be538d89dcf"
+                "reference": "68aabe1299b2fafafb8ecfd74540ec4d986fc388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/d133b432ca29fe56b5e153719ba81be538d89dcf",
-                "reference": "d133b432ca29fe56b5e153719ba81be538d89dcf",
+                "url": "https://api.github.com/repos/redot-src/livewire-datatable/zipball/68aabe1299b2fafafb8ecfd74540ec4d986fc388",
+                "reference": "68aabe1299b2fafafb8ecfd74540ec4d986fc388",
                 "shasum": ""
             },
             "require": {
@@ -3368,9 +3368,9 @@
             "description": "A Laravel package to easily handle server-side datatables in Livewire",
             "support": {
                 "issues": "https://github.com/redot-src/livewire-datatable/issues",
-                "source": "https://github.com/redot-src/livewire-datatable/tree/v1.1.2"
+                "source": "https://github.com/redot-src/livewire-datatable/tree/v1.1.3"
             },
-            "time": "2023-09-22T15:25:44+00:00"
+            "time": "2023-09-22T18:31:40+00:00"
         },
         {
             "name": "spatie/image-optimizer",

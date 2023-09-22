@@ -1,4 +1,4 @@
-<x-layouts::scaffold {{ $attributes }}>
+<x-layouts::scaffold :title="$title" {{ $attributes }}>
     <div class="page">
         <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark d-print-none" style="overflow: auto">
             <div class="container-fluid">
