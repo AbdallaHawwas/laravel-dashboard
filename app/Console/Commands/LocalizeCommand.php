@@ -45,7 +45,7 @@ class LocalizeCommand extends Command
         $ignore = glob(lang_path(config('app.fallback_locale')) . '/*.php');
         $ignore = array_map(fn ($file) => basename($file, '.php') . '\.[^\s]', $ignore);
 
-        return '/(?:' . implode('|', $functions) . ")\((['\"])(?<translation>(?!" . implode('|', $ignore) . ")(?:[^']|\\\')+?)\\1(?:,.+?)?\)/s";
+        return '/(?:' . implode('|', $functions) . ")\((['\"])(?<translation>(?!" . implode('|', $ignore) . ")(?:[^']|\\\')+?)(?<!\\\\)\\1/s";
     }
 
     /**
