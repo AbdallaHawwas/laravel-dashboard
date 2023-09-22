@@ -11,27 +11,27 @@
 <html lang="{{ app()->getLocale() }}" dir="{{ $direction }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="title" content="{{ $title }}">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Abdelrhman Said">
+    <meta name="title" content="{{ $title }}" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Abdelrhman Said" />
 
     <title>{{ $title }}</title>
 
-    <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon" />
 
     {{-- Tabler Core --}}
-    <link rel="stylesheet" href="{{ asset("/vendor/tabler/tabler.$direction.min.css") }}">
-    <link rel="stylesheet" href="{{ asset('/vendor/tabler/tabler-vendors.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/vendor/tabler-icons/tabler-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset("/vendor/tabler/tabler.$direction.min.css") }}" />
+    <link rel="stylesheet" href="{{ asset('/vendor/tabler/tabler-vendors.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/vendor/tabler-icons/tabler-icons.min.css') }}" />
 
     {{-- Custom Styles --}}
-    <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}" />
 
     @livewireStyles
     @toastifyCss
@@ -50,11 +50,12 @@
     {{-- Tabler Core --}}
     <script src="{{ asset('/vendor/tabler/tabler.min.js') }}"></script>
 
-    {{-- Tabler Plugins --}}
+    {{-- Plugins --}}
     <script src="{{ asset('/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('/vendor/tom-select/tom-select.base.min.js') }}"></script>
 
     {{-- Custom Scripts --}}
+    <script src="{{ asset('/assets/js/functions.js') }}"></script>
     <script src="{{ asset('/assets/js/app.js') }}"></script>
 
     @livewireScripts
