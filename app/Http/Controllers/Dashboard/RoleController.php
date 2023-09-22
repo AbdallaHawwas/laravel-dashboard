@@ -46,7 +46,7 @@ class RoleController extends Controller
         $role->syncPermissions($validated['permissions'] ?? []);
 
         return redirect()->route('dashboard.roles.index')
-            ->with('success', __('Role created successfully.'));
+            ->with('success', __(':resource has been created.', ['resource' => __('Role')]));
     }
 
     /**
@@ -81,7 +81,7 @@ class RoleController extends Controller
         $role->syncPermissions($validated['permissions'] ?? []);
 
         return redirect()->route('dashboard.roles.index')
-            ->with('success', __('Role updated successfully.'));
+            ->with('success', __(':resource has been updated.', ['resource' => __('Role')]));
     }
 
     /**
@@ -97,6 +97,6 @@ class RoleController extends Controller
         $role->delete();
 
         return redirect()->route('dashboard.roles.index')
-            ->with('success', __('Role deleted successfully.'));
+            ->with('success', __(':resource has been deleted.', ['resource' => __('Role')]));
     }
 }

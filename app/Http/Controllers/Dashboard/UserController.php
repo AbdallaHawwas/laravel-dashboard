@@ -22,6 +22,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->back()->with('success', __('User deleted successfully.'));
+        return redirect()->route('dashboard.users.index')->with('success', __(':resource has been deleted.', ['resource' => __('User')]));
     }
 }

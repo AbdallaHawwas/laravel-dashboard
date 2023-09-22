@@ -1,13 +1,11 @@
 <x-layouts::dashboard>
-    <x-components::status />
-
     <form class="card" action="{{ route('dashboard.language.update', $locale) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="card-header">
             <h3 class="card-title">
-                {{ __('Edit (:title)', ['title' => __('languages.' . $locale)]) }}
+                {{ __('Edit') }}
             </h3>
         </div>
 

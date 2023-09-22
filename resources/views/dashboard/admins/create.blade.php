@@ -3,7 +3,7 @@
         @csrf
 
         <div class="card-header">
-            <p class="card-title">{{ __('Create Admin') }}</p>
+            <p class="card-title">{{ __('Create') }}</p>
         </div>
 
         <div class="card-body">
@@ -12,7 +12,7 @@
             </div>
 
             <div class="mb-3">
-                <x-components::forms.input type="email" name="email" :title="__('Email Address')" :value="old('email')" required />
+                <x-components::forms.input type="email" name="email" :title="__('Email address')" :value="old('email')" required />
             </div>
 
             <div class="mb-3">

@@ -4,7 +4,7 @@
         @method('PUT')
 
         <div class="card-header">
-            <p class="card-title">{{ __('Edit (:title)', ['title' => $memo->title]) }}</p>
+            <p class="card-title">{{ __('Edit') }}</p>
         </div>
 
         <div class="card-body">

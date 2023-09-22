@@ -1,7 +1,7 @@
 <x-layouts::dashboard>
     <div class="card">
         <div class="card-header">
-            <p class="card-title">{{ __('View (:title)', ['title' => $memo->title]) }}</p>
+            <p class="card-title">{{ $memo->title }}</p>
         </div>
 
         <div class="card-body">

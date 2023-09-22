@@ -35,6 +35,6 @@ class SettingController extends Controller
         }
 
         return redirect()->route('dashboard.settings.edit')
-            ->with('success', __('Settings updated successfully!'));
+            ->with('success', __(':resource has been updated.', ['resource' => __('Settings')]));
     }
 }

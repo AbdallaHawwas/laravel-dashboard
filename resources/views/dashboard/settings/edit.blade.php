@@ -6,7 +6,7 @@
         @method('PUT')
 
         <div class="card-header">
-            <div class="card-title">{{ __('Website settings') }}</div>
+            <div class="card-title">{{ __('Settings') }}</div>
         </div>
 
         <div class="card-body">

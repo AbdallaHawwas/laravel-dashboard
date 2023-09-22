@@ -13,6 +13,6 @@ class SyncLanguageController extends Controller
     {
         Artisan::call('localize', ['language' => strtolower($locale)]);
 
-        return redirect()->back()->with('success', __('The language files have been synchronized.'));
+        return redirect()->route('dashboard.language.index')->with('success', __(':resource has been updated.', ['resource' => __('Language')]));
     }
 }

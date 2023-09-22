@@ -46,7 +46,7 @@ class LanguageController extends Controller
         $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES;
         File::put(lang_path($locale . '.json'), json_encode($request->get('translations'), $flags));
 
-        return redirect()->back()->with('success', __('The language files have been updated!'));
+        return redirect()->route('dashboard.language.index')->with('success', __(':resource has been updated.', ['resource' => __('Language')]));
     }
 
     /**

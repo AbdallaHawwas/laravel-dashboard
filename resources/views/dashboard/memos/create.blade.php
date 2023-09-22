@@ -3,7 +3,7 @@
         @csrf
 
         <div class="card-header">
-            <p class="card-title">{{ __('Create Memo') }}</p>
+            <p class="card-title">{{ __('Create') }}</p>
         </div>
 
         <div class="card-body">

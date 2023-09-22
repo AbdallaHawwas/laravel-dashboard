@@ -42,6 +42,6 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('dashboard.profile.edit')->with('success', __('Profile updated successfully.'));
+        return redirect()->route('dashboard.profile.edit')->with('success', __(':resource has been updated.', ['resource' => __('Profile')]));
     }
 }

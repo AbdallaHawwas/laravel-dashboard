@@ -54,7 +54,7 @@ class AdminController extends Controller
 
         SendNewAdminNotification::dispatch($admin, $password);
 
-        return redirect()->route('dashboard.admins.index')->with('success', __('Admin has been created.'));
+        return redirect()->route('dashboard.admins.index')->with('success', __(':resource has been created.', ['resource' => __('Admin')]));
     }
 
     /**
@@ -83,7 +83,7 @@ class AdminController extends Controller
 
         $admin->syncRoles($validated['role']);
 
-        return redirect()->route('dashboard.admins.index')->with('success', __('Admin has been updated.'));
+        return redirect()->route('dashboard.admins.index')->with('success', __(':resource has been updated.', ['resource' => __('Admin')]));
     }
 
     /**
@@ -97,6 +97,6 @@ class AdminController extends Controller
 
         $admin->delete();
 
-        return back()->with('success', __('Admin has been deleted.'));
+        return back()->with('success', __(':resource has been deleted.', ['resource' => __('Admin')]));
     }
 }
