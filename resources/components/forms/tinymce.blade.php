@@ -10,7 +10,7 @@
     </label>
 @endif
 
-<x-components::forms.textarea :value="$value" :id="$id" :required="false" {{ $attributes->only('name') }} />
+<x-components::forms.textarea :value="$value" :id="$id" :autosize="false" :required="false" {{ $attributes->only('name') }} />
 
 @push('scripts')
     <script>

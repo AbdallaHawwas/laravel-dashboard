@@ -71,7 +71,9 @@ class Dashboard extends Component
         $item->active = $item->url && $this->isActiveUrl($item->url);
 
         // Set the page title to the current item title if it's active.
-        if ($item->active) $this->title = $item->title;
+        if ($item->active) {
+            $this->title = $item->title;
+        }
 
         if (isset($item->children)) {
             $item->children = collect($item->children)->map(fn ($child) => $this->parseSidebarItem($child))->filter();
