@@ -68,7 +68,7 @@ class LocalizeCommand extends Command
         $translations = collect();
 
         $files = Finder::create()->files()->ignoreVCSIgnored(true);
-        $files->in(resource_path())->in(app_path('Http'))->name('*.php');
+        $files->in(resource_path())->in(app_path('Http'))->in(app_path('Livewire'))->name('*.php');
 
         foreach ($files as $file) {
             preg_match_all($this->pattern, $file->getContents(), $matches);
