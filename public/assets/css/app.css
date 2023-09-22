@@ -22,24 +22,3 @@ body {
     font-feature-settings: "cv03", "cv04", "cv11";
     overflow-y: auto;
 }
-
-/* Fix tinymce background */
-.tox .tox-edit-area__iframe {
-    background-color: unset !important;
-}
-
-/* Allow pagination to wrap */
-ul.pagination {
-    gap: 5px;
-    flex-wrap: wrap;
-}
-
-/* Fix tabler dropdown menu arrow in rtl */
-[dir="rtl"] .dropdown-menu-arrow:before {
-    transform: rotate(45deg);
-}
-
-/* Fix for tom-select placeholder appear if value is set */
-[data-ts-item] + input::placeholder {
-    opacity: 0;
-}

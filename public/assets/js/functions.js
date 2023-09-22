@@ -1,4 +1,4 @@
-const initTinyMCE = async (selector, options) => {
+async function initTinyMCE(selector, options) {
     const theme = localStorage.getItem('theme') || 'light';
 
     options = Object.assign({}, options, {
@@ -23,7 +23,24 @@ const initTinyMCE = async (selector, options) => {
     }, { once: true });
 };
 
-const togglePassword = (el, selector) => {
+function initLitepicker(selector, options) {
+    options = Object.assign({}, options, {
+        element: document.querySelector(selector),
+        showTooltip: true,
+        autoApply: true,
+        allowRepick: true,
+        lang: document.documentElement.lang,
+        buttonText: {
+            previousMonth: '<i class="ti ti-chevron-left"></i>',
+            nextMonth: '<i class="ti ti-chevron-right"></i>',
+        },
+    });
+
+    const picker = new Litepicker(options);
+    $(selector).data('litepicker', picker);
+};
+
+function togglePassword(el, selector) {
     $(el).find('i').toggleClass('ti-eye ti-eye-closed');
     $(selector).attr('type', (i, attr) => attr === 'password' ? 'text' : 'password');
 };

@@ -38,6 +38,8 @@
             (() => {
                 const instance = new TomSelect('#{{ $id }}', {
                     create: false,
+                    dropdownParent: 'body',
+                    copyClassesToDropdown: false,
                     placeholder: '{{ $placeholder ?? __('Select an option') }}',
                 });
 

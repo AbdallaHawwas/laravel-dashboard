@@ -32,6 +32,7 @@
 
     {{-- Custom Styles --}}
     <link rel="stylesheet" href="{{ asset('/assets/css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/css/overrides.css') }}" />
 
     @livewireStyles
     @toastifyCss
@@ -52,6 +53,7 @@
 
     {{-- Plugins --}}
     <script src="{{ asset('/vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('/vendor/litepicker/litepicker.min.js') }}"></script>
     <script src="{{ asset('/vendor/tom-select/tom-select.base.min.js') }}"></script>
 
     {{-- Custom Scripts --}}
