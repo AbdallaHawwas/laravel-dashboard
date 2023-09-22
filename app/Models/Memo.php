@@ -16,7 +16,17 @@ class Memo extends Model
      */
     protected $fillable = [
         'title',
+        'date',
         'content',
+    ];
+
+    /**
+     * Attributes that should be cast to native types.
+     *
+     * @var array<int, string>
+     */
+    protected $casts = [
+        'date' => 'datetime',
     ];
 
     /**

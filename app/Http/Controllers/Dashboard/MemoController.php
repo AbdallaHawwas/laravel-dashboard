@@ -30,6 +30,7 @@ class MemoController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
+            'date' => ['nullable', 'date'],
             'content' => ['nullable', 'string'],
         ]);
 
@@ -65,12 +66,13 @@ class MemoController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
+            'date' => ['nullable', 'date'],
             'content' => ['nullable', 'string'],
         ]);
 
         $memo->update($request->all());
 
-        return redirect()->back()->with('success', __('Memo has been updated successfully!'));
+        return redirect()->route('dashboard.memos.index')->with('success', __('Memo has been updated successfully!'));
     }
 
     /**

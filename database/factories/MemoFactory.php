@@ -18,6 +18,7 @@ class MemoFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
+            'date' => $this->faker->dateTimeBetween('-1 year', '+1 year'),
             'content' => $this->faker->paragraph,
         ];
     }

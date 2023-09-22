@@ -32,6 +32,10 @@ class MemosTable extends DataTable
             Column::make(__('Title'), 'title')
                 ->searchable()
                 ->sortable(),
+            Column::make(__('Date'), 'date')
+                ->format(fn ($date) => $date->format('D, M j, Y'))
+                ->searchable()
+                ->sortable(),
         ];
     }
 

@@ -7,8 +7,14 @@
         </div>
 
         <div class="card-body">
-            <div class="mb-3">
-                <x-components::forms.input name="title" :title="__('Title')" :value="old('title')" required />
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <x-components::forms.input name="title" :title="__('Title')" :value="old('title')" required />
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <x-components::forms.date name="date" :title="__('Date')" :value="old('date')" />
+                </div>
             </div>
 
             <div class="mb-3">
