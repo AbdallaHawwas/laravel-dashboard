@@ -33,7 +33,7 @@ class MemosTable extends DataTable
                 ->searchable()
                 ->sortable(),
             Column::make(__('Date'), 'date')
-                ->format(fn ($date) => $date->format('D, M j, Y'))
+                ->format(fn ($date) => $date ? $date->format('D, M j, Y') : null)
                 ->searchable()
                 ->sortable(),
         ];
