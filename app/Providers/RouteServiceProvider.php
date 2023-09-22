@@ -36,6 +36,10 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+            // Global TinyMCE upload route
+            Route::post('/tinymce/upload', [\App\Http\Controllers\TinymceController::class, 'store'])
+                ->name('tinymce.upload');
+
             Route::middleware('api')
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));

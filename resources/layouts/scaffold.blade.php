@@ -21,6 +21,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Abdelrhman Said" />
 
+    @stack('meta')
+
     <title>{{ $title }}</title>
 
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon" />
