@@ -1,4 +1,4 @@
-@props(['title' => null, 'id' => uniqid('input-'), 'before' => null, 'after' => null])
+@props(['title' => null, 'id' => uniqid('input-'), 'flat' => true, 'before' => null, 'after' => null])
 
 @php
     $type = strtolower($attributes->get('type') ?? 'text');
@@ -6,6 +6,8 @@
 
     $name = $attributes->get('name') ?? false;
     $required = $attributes->get('required') ?? false;
+
+    $hasInputGroup = $before || $after || $isPassword;
 @endphp
 
 @if ($title)
@@ -18,7 +20,7 @@
     </label>
 @endif
 
-<div @class(['col', 'input-group' => $before || $after || $isPassword])>
+<div @class(['col', 'input-group' => $hasInputGroup, 'input-group-flat' => $hasInputGroup && $flat])>
     @if ($before)
         <span class="input-group-text">{{ $before }}</span>
     @endif
