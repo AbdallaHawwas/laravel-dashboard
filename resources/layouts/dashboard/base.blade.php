@@ -1,4 +1,4 @@
-<x-layouts::scaffold :title="$title" {{ $attributes }}>
+<x-layouts::scaffold :title="$attributes->get('title', $title)" {{ $attributes->except('title') }}>
     <div class="page">
         <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark d-print-none" style="overflow: auto">
             <div class="container-fluid">
@@ -26,13 +26,7 @@
         </aside>
 
         <header class="navbar navbar-expand-md navbar-light d-print-none">
-            <div class="container-fluid justify-content-between px-3">
-                <div>
-                    @isset($attributes['title'])
-                        <a href="#" class="navbar-brand">{{ $attributes['title'] }}</a>
-                    @endisset
-                </div>
-
+            <div class="container-fluid justify-content-end px-3">
                 <div class="navbar-nav flex-row order-md-last gap-2">
                     @if (count(config('app.dashboard_locales')) > 1)
                         <div class="nav-item dropdown">
