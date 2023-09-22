@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Redot\LivewireDatatable\Datatable;
 use Spatie\Permission\Models\Permission;
@@ -24,6 +25,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        /* Add settings from database to config */
+        if (Schema::hasTable('settings')) {
+            $settings = \App\Models\Setting::all();
+
+            foreach ($settings as $setting) {
+                config()->set('settings.' . $setting->key, $setting->value);
+            }
+        }
+
         /* Register components namespace */
         Blade::anonymousComponentPath(resource_path('components'), 'components');
         Blade::componentNamespace('App\\View\\Components', 'components');

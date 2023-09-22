@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Dashboard'),
+    'name' => config('settings.app_name', env('APP_NAME', 'Dashboard')),
 
     /*
     |--------------------------------------------------------------------------
