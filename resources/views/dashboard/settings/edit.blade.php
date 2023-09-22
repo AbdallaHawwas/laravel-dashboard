@@ -21,6 +21,14 @@
             <div class="mb-3">
                 <x-components::forms.input name="facebook_pixel_id" :title="__('Facebook Pixel ID')" value="{{ setting('facebook_pixel_id') }}" />
             </div>
+
+            <div class="mb-3">
+                <div class="form-label">{{ __('Page loader') }}</div>
+                <label class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="page_loader_enabled" {{ setting('page_loader_enabled') ? 'checked' : '' }}>
+                    <span class="form-check-label">{{ __('Enabled') }}</span>
+                </label>
+            </div>
         </div>
 
         <div class="card-footer text-end">

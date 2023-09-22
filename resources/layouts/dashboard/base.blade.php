@@ -1,4 +1,8 @@
 <x-layouts::scaffold :title="$attributes->get('title', $title)" {{ $attributes->except('title') }}>
+    @if (setting('page_loader_enabled'))
+        <x-components::page-loader />
+    @endif
+
     <div class="page">
         <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark d-print-none" style="overflow: auto">
             <div class="container-fluid">
@@ -85,7 +89,7 @@
 
                     <footer class="mt-4 text-muted text-center">
                         <div>
-                            {{  __('All rights reserved for') }}
+                            {{ __('All rights reserved for') }}
                             <a href="{{ config('app.url') }}" target="_blank">{{ setting('app_name') }}</a>
                             &copy; {{ date('Y') }}
                         </div>

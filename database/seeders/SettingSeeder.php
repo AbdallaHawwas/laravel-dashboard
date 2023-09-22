@@ -15,6 +15,7 @@ class SettingSeeder extends Seeder
             'app_name' => config('app.name'),
             'google_analytics_property_id' => '',
             'facebook_pixel_id' => '',
+            'page_loader_enabled' => false,
         ];
 
         foreach ($settings as $key => $value) {

@@ -27,6 +27,8 @@ class SettingController extends Controller
             'facebook_pixel_id' => 'nullable|string|max:255',
         ]);
 
+        $settings['page_loader_enabled'] = $request->has('page_loader_enabled');
+
         foreach ($settings as $key => $value) {
             Setting::updateOrCreate(
                 ['key' => $key],
