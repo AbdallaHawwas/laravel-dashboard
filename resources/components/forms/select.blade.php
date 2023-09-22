@@ -32,19 +32,17 @@
     <x-components::forms.invalid-feedback :name="$name" />
 @endif
 
-@if ($tom)
-    @push('scripts')
-        <script>
-            (() => {
-                const instance = new TomSelect('#{{ $id }}', {
-                    create: false,
-                    dropdownParent: 'body',
-                    copyClassesToDropdown: false,
-                    placeholder: '{{ $placeholder ?? __('Select an option') }}',
-                });
+@pushIf($tom, 'scripts')
+    <script>
+        (() => {
+            const instance = new TomSelect('#{{ $id }}', {
+                create: false,
+                dropdownParent: 'body',
+                copyClassesToDropdown: false,
+                placeholder: '{{ $placeholder ?? __('Select an option') }}',
+            });
 
-                $('#{{ $id }}').data('tom', instance);
-            })();
-        </script>
-    @endpush
-@endif
+            $('#{{ $id }}').data('tom', instance);
+        })();
+    </script>
+@endPushIf
