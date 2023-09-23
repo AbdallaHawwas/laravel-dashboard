@@ -1,3 +1,15 @@
+/* ---------------------------------
+ * Plugins initialization
+ * --------------------------------- */
+
+/**
+ * Initialize the tinyMCE editor.
+ *
+ * @param {string} selector
+ * @param {object} options
+ * @returns {object}
+ * @see https://www.tiny.cloud/docs/
+ */
 async function initTinyMCE(selector, options) {
     const theme = localStorage.getItem('theme') || 'light';
 
@@ -51,6 +63,14 @@ async function initTinyMCE(selector, options) {
     }, { once: true });
 };
 
+/**
+ * Initialize the litepicker date picker.
+ *
+ * @param {string} selector
+ * @param {object} options
+ * @returns {object}
+ * @see https://litepicker.com/
+ */
 function initLitepicker(selector, options) {
     options = Object.assign({}, options, {
         element: document.querySelector(selector),
@@ -68,7 +88,39 @@ function initLitepicker(selector, options) {
     $(selector).data('litepicker', picker);
 };
 
+/* ---------------------------------
+ * Utilities
+ * --------------------------------- */
+
+/**
+ * Toggle the password visibility.
+ *
+ * @param {string|object} el
+ * @param {string} selector
+ * @returns {void}
+ */
 function togglePassword(el, selector) {
     $(el).find('i').toggleClass('ti-eye ti-eye-closed');
     $(selector).attr('type', (i, attr) => attr === 'password' ? 'text' : 'password');
 };
+
+/**
+ * Translate the given key with the given parameters.
+ *
+ * @param {string} key
+ * @param {object} params
+ * @returns {string}
+ */
+function __(key, params = {}) {
+    if (typeof window.__translations === 'undefined') {
+        return key;
+    }
+
+    let translation = window.__translations[key] || key;
+
+    for (const [ param, value ] of Object.entries(params)) {
+        translation = translation.replaceAll(`:${param}`, value);
+    }
+
+    return translation;
+}
