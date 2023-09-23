@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00846d1cc6ea7cf09a1f18f80d244ddc",
+    "content-hash": "d178ebb25ffa68289b2b547e368e1d9f",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -3260,6 +3260,61 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "redot/laravel-lang-extractor",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/redot-src/laravel-lang-extractor.git",
+                "reference": "69a4f3622d02050912b98580e23bd655ce4073dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/redot-src/laravel-lang-extractor/zipball/69a4f3622d02050912b98580e23bd655ce4073dd",
+                "reference": "69a4f3622d02050912b98580e23bd655ce4073dd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.0",
+                "illuminate/support": "^10.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Redot\\LaravelLangExtractor\\LaravelLangExtractorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Redot\\LaravelLangExtractor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdelrhman Said",
+                    "email": "abdelrhmansaidzaki@hotmail.com"
+                }
+            ],
+            "description": "A Laravel package to extract language keys from your project files and generate a language file from them.",
+            "support": {
+                "issues": "https://github.com/redot-src/laravel-lang-extractor/issues",
+                "source": "https://github.com/redot-src/laravel-lang-extractor/tree/v1.0.0"
+            },
+            "time": "2023-09-23T11:29:54+00:00"
         },
         {
             "name": "redot/laravel-toastify",

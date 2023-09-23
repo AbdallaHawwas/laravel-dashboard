@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use Illuminate\Support\Facades\Artisan;
+use Redot\LaravelLangExtractor\LangExtractor;
 
 class SyncLanguageController extends Controller
 {
@@ -11,7 +11,10 @@ class SyncLanguageController extends Controller
      */
     public function update(string $locale)
     {
-        Artisan::call('localize', ['language' => strtolower($locale)]);
+        $path = lang_path($locale . '.json');
+
+        $extractor = new LangExtractor();
+        $extractor->extract()->mergeWithFile($path)->save($path, true);
 
         return redirect()->route('dashboard.language.index')->with('success', __(':resource has been updated.', ['resource' => __('Language')]));
     }
