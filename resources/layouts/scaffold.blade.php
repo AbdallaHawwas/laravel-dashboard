@@ -64,9 +64,12 @@
     <script src="{{ asset('/vendor/litepicker/litepicker.min.js') }}"></script>
     <script src="{{ asset('/vendor/tom-select/tom-select.base.min.js') }}"></script>
 
+    {{-- Language Script --}}
+    <script src="{{ route('global.translations.show', app()->getLocale()) }}"></script>
+
     {{-- Custom Scripts --}}
-    <script src="{{ asset('/assets/js/functions.js') }}"></script>
     <script src="{{ asset('/assets/js/app.js') }}"></script>
+    <script src="{{ asset('/assets/js/functions.js') }}"></script>
 
     @livewireScripts
     @toastifyJs
