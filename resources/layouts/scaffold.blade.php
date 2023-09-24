@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="{{ asset('/vendor/tabler-icons/tabler-icons.min.css') }}" />
 
     {{-- Plugins --}}
-    <link rel="stylesheet" href="{{ asset('/vendor/fancybox/fancybox.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('/vendor/jquery-confirm/jquery-confirm.min.css') }}" />
 
     {{-- Custom Styles --}}
@@ -59,7 +58,6 @@
 
     {{-- Plugins --}}
     <script src="{{ asset('/vendor/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('/vendor/fancybox/fancybox.min.js') }}"></script>
     <script src="{{ asset('/vendor/jquery-confirm/jquery-confirm.min.js') }}"></script>
     <script src="{{ asset('/vendor/litepicker/litepicker.min.js') }}"></script>
     <script src="{{ asset('/vendor/tom-select/tom-select.base.min.js') }}"></script>
