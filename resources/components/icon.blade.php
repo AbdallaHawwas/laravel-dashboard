@@ -1,5 +1,5 @@
 @props(['icon'])
-https://github.com/redot-src/laravel-dashboard/tree/master
+
 @if (str_starts_with($icon, '<'))
     {!! $icon !!}
 @else
